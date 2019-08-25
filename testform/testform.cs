@@ -1,16 +1,31 @@
-# openTRANS
-.NET Core / Standard implementation of Fraunhofer IAO's XML openTRANS v2.1 format definitions
+﻿using openTRANS;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static openTRANS.Common;
 
+namespace testform
+{
+    public partial class testform : Form
+    {
+        public testform()
+        {
+            InitializeComponent();
+        }
 
+        private void testform_Load(object sender, EventArgs e)
+        {
+            NumberFormatInfo nfi = new NumberFormatInfo(); //English comma separator dot, e.g. for German systems
+            nfi.NumberDecimalSeparator = ".";
 
-# Sample
-See testform subproject for a working example.
-
-Excerpt:
-
-
-```CSharp
-var o = new Order();
+            var o = new Order();
             
             o.OrderHeader.OrderInfo.DeliveryDate.Type = DeliveryDateType.Fixed;
             o.OrderHeader.OrderInfo.DeliveryDate.DeliveryStartDate = DateTime.Now.Date.AddDays(3);
@@ -101,8 +116,8 @@ var o = new Order();
                 o.OrderItemList.Add(oi);
             }
 
-            var ot = new XmlCreator(o).Result;
-```
-
-# Links
-- Website https://www.dxsdata.com/2019/08/opentrans-for-net-core/
+            var ot = new XmlCreator(o);
+            textBox1.Text = ot.Result;
+        }
+    }
+}
