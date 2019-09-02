@@ -5,7 +5,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>DXSdata</Authors>
     <Company>DXSdata GmbH</Company>
-    <Description>.NET Core / Standard Implementation of the openTRANS v2.1 definitions by Fraunhofer IAO</Description>
+    <Description>.NET Core / Standard implementation of the openTRANS v2.1 definitions by Fraunhofer IAO</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>

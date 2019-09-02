@@ -16,7 +16,8 @@ namespace openTRANS
         [XmlElement("ORDER_HEADER")]
         public OrderHeader OrderHeader = new OrderHeader();
 
-        [XmlElement("ORDER_ITEM_LIST")]
+        [XmlArray("ORDER_ITEM_LIST")]
+        [XmlArrayItem("ORDER_ITEM")]
         public List<OrderItem> OrderItemList = new List<OrderItem>();
 
         [XmlElement("ORDER_SUMMARY")]
@@ -63,7 +64,9 @@ namespace openTRANS
         public DeliveryDate DeliveryDate = new DeliveryDate();
 
         [XmlArray("PARTIES")]
+        [XmlArrayItem("PARTY")]
         public List<Party> Parties = new List<Party>();
+        
 
         [XmlElement("ORDER_PARTIES_REFERENCE")]
         public OrderPartiesReference OrderPartiesReference = new OrderPartiesReference();
@@ -82,7 +85,7 @@ namespace openTRANS
         public DateTime DeliveryEndDate;
     }
 
-    
+
     public class Party
     {
         [XmlElement("PARTY_ID", Namespace = Common.Namespace.bmecat)]
