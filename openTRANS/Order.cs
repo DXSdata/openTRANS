@@ -179,6 +179,7 @@ namespace openTRANS
         public ProductId ProductId = new ProductId();
 
         [XmlArray("PRODUCT_FEATURES")]
+        [XmlArrayItem("FEATURE")]
         public List<Feature> ProductFeatures = new List<Feature>();
 
         [XmlElement("QUANTITY")]

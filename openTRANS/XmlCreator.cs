@@ -10,7 +10,7 @@ namespace openTRANS
     public class XmlCreator
     {
         private string xmlVersion = "1.0";
-        private Encoding encoding = Encoding.UTF8; //In case of changing also change StringWriter below; would otherwise produce wrong xml encoding attribute
+        private Encoding encoding = new UpperCaseUTF8Encoding(); //Previously Encoding.Utf8; in case of changing also change StringWriter below; would otherwise produce wrong xml encoding attribute
         private bool standalone = true;
 
         //private XNamespace xmlns = "http://www.opentrans.org/XMLSchema/2.1";
@@ -39,7 +39,7 @@ namespace openTRANS
             get
             {
                 var xdoc = new XDocument(
-                    new XDeclaration(xmlVersion, encoding.WebName.ToUpper(), standalone ? "yes" : "no")
+                    new XDeclaration(xmlVersion, encoding.WebName, standalone ? "yes" : "no")
                     );
 
                
@@ -51,7 +51,7 @@ namespace openTRANS
 
 
                 XmlSerializer serializer = new XmlSerializer(typeof(Order));
-                using (var writer = new Utf8StringWriter())
+                using (var writer = new UTF8StringWriter())
                 {
                     serializer.Serialize(writer, order, xmlns);
                     return writer.ToString();
@@ -63,6 +63,40 @@ namespace openTRANS
         private class Utf8StringWriter : StringWriter
         {
             public override Encoding Encoding { get { return Encoding.UTF8; } }
+        }
+
+        //writes UTF-8 in uppercase; see class below
+        private class UTF8StringWriter : StringWriter
+        {
+            public override Encoding Encoding { get { return new UpperCaseUTF8Encoding(); } }
+        }
+
+
+        /// <summary>
+        /// Sometimes utf-8 definition in first line needed in uppercase by suppliers.
+        /// https://stackoverflow.com/questions/4291332/utf-8-in-uppercase
+        /// </summary>
+        public class UpperCaseUTF8Encoding : UTF8Encoding
+        {           
+
+            public override string WebName
+            {
+                get { return base.WebName.ToUpper(); }
+            }
+
+            public static UpperCaseUTF8Encoding UpperCaseUTF8
+            {
+                get
+                {
+                    if (upperCaseUtf8Encoding == null)
+                    {
+                        upperCaseUtf8Encoding = new UpperCaseUTF8Encoding();
+                    }
+                    return upperCaseUtf8Encoding;
+                }
+            }
+
+            private static UpperCaseUTF8Encoding upperCaseUtf8Encoding = null;
         }
     }
 }
