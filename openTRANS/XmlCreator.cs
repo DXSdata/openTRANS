@@ -13,21 +13,9 @@ namespace openTRANS
         private Encoding encoding = new UpperCaseUTF8Encoding(); //Previously Encoding.Utf8; in case of changing also change StringWriter below; would otherwise produce wrong xml encoding attribute
         private bool standalone = true;
 
-        //private XNamespace xmlns = "http://www.opentrans.org/XMLSchema/2.1";
         private XNamespace xsi = "http://www.w3.org/2001/XMLSchema-instance";
-        private string schemaLocation = "http://www.opentrans.org/XMLSchema/2.1%20opentrans_2_1.xsd";
-        private string bmecat = "http://www.bmecat.org/bmecat/2005";
-        private string xmime = "http://www.w3.org/2005/05/xmlmime";
-        private string xsig = "http://www.w3.org/2000/09/xmldsig#";
-
-        private string version = "2.1";
-        private string type = "standard";
-
+        
         private Order order;
-
-        private const string OrderHeader = "ORDER_HEADER";
-        private const string ControlInfo = "CONTROL_INFO";
-        private const string ControlInfoGenerationDate = "GENERATION_DATE";
 
         public XmlCreator(Order order)
         {

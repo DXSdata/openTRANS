@@ -1,4 +1,6 @@
 ﻿
+using ISO3166;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace openTRANS
@@ -101,6 +103,13 @@ namespace openTRANS
 
             [XmlAttribute("type")]
             public string Type;
+        }
+
+        public static string GetCountryCode(string countryName)
+        {
+            var country = Country.List.FirstOrDefault(c => c.Name == countryName);
+
+            return country?.ThreeLetterCode;
         }
     }
 }

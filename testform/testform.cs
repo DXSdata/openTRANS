@@ -36,6 +36,7 @@ namespace testform
 
             o.OrderHeader.OrderInfo.OrderId = "123";
             o.OrderHeader.OrderInfo.OrderDate = DateTime.Now.Date;
+            o.OrderHeader.OrderInfo.CustomerOrderReference.OrderDescr = "MyOrderNr";
 
             var p1 = new Party();
             p1.PartyId.Value = "TestSupplier";
@@ -53,6 +54,7 @@ namespace testform
             p2.Address.Zip = "MyZipCode";
             p2.Address.City = "MyCity";
             p2.Address.Country = "Austria";
+            p2.Address.CountryCoded = Common.GetCountryCode(p2.Address.Country);
             p2.Address.Phone.Value = "+1234";
             p2.Address.Phone.Value = PhoneType.Office;
             p2.Address.Fax.Value = "+5678";

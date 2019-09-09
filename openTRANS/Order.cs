@@ -67,9 +67,12 @@ namespace openTRANS
         [XmlArrayItem("PARTY")]
         public List<Party> Parties = new List<Party>();
         
-
         [XmlElement("ORDER_PARTIES_REFERENCE")]
         public OrderPartiesReference OrderPartiesReference = new OrderPartiesReference();
+
+        [XmlElement("CUSTOMER_ORDER_REFERENCE")]
+        public CustomerOrderReference CustomerOrderReference = new CustomerOrderReference();
+
     }
 
 
@@ -130,6 +133,9 @@ namespace openTRANS
         [XmlElement("COUNTRY", Namespace = Common.Namespace.bmecat)]
         public string Country;
 
+        [XmlElement("COUNTRY_CODED", Namespace = Common.Namespace.bmecat)]
+        public string CountryCoded;
+
         [XmlElement("PHONE", Namespace = Common.Namespace.bmecat)]
         public TypedItem Phone = new TypedItem();
 
@@ -161,7 +167,13 @@ namespace openTRANS
 
     }
 
-      
+
+    public class CustomerOrderReference
+    {
+        [XmlElement("ORDER_DESCR")]
+        public string OrderDescr;
+    }
+
 
     public class ShipmentPartiesReference
     {
