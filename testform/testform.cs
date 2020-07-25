@@ -26,17 +26,23 @@ namespace testform
             nfi.NumberDecimalSeparator = ".";
 
             var o = new Order();
+
+            var ohi = o.OrderHeader.OrderInfo;
+
+            ohi.DeliveryDate.Type = DeliveryDateType.Fixed;
+            ohi.DeliveryDate.DeliveryStartDate = DateTime.Now.Date.AddDays(3);
+            ohi.DeliveryDate.DeliveryEndDate = DateTime.Now.Date.AddDays(4);
             
-            o.OrderHeader.OrderInfo.DeliveryDate.Type = DeliveryDateType.Fixed;
-            o.OrderHeader.OrderInfo.DeliveryDate.DeliveryStartDate = DateTime.Now.Date.AddDays(3);
-            o.OrderHeader.OrderInfo.DeliveryDate.DeliveryEndDate = DateTime.Now.Date.AddDays(4);
+            ohi.OrderId = "123";
+            ohi.OrderDate = DateTime.Now.Date;
+            ohi.CustomerOrderReference.OrderDescr = "MyOrderNr";
+
+            ohi.Remarks.Add(new TypedItem() { Type = "DELIVERY", Value = "MyDeliveryRemark" });
+            ohi.Remarks.Add(new TypedItem() { Type = "", Value = "AnyAdditionalNote" });
 
             o.OrderHeader.ControlInfo.GeneratorInfo = "DXSdata openTRANS Generator";
             o.OrderHeader.ControlInfo.GenerationDate = DateTime.Now;
 
-            o.OrderHeader.OrderInfo.OrderId = "123";
-            o.OrderHeader.OrderInfo.OrderDate = DateTime.Now.Date;
-            o.OrderHeader.OrderInfo.CustomerOrderReference.OrderDescr = "MyOrderNr";
 
             var p1 = new Party();
             p1.PartyId.Value = "TestSupplier";
@@ -114,6 +120,8 @@ namespace testform
 
                 oi.ProductPriceFix.PriceAmount = 14;
                 //oi.ProductPriceFix.AllowOrChargesFix.AllowOrCharge.Type = AllowOrChargeTypes.Allowance;
+
+                oi.Remarks.Add(new TypedItem() { Type = "", Value = "testItemRemark" });
 
                 o.OrderItemList.Add(oi);
             }

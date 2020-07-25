@@ -73,6 +73,9 @@ namespace openTRANS
         [XmlElement("CUSTOMER_ORDER_REFERENCE")]
         public CustomerOrderReference CustomerOrderReference = new CustomerOrderReference();
 
+        //will be serialized as array without a "remarks" parent
+        [XmlElement("REMARKS")]
+        public List<TypedItem> Remarks = new List<TypedItem>();
     }
 
 
@@ -181,6 +184,7 @@ namespace openTRANS
         public TypedItem DeliveryIdRef = new TypedItem();
     }
 
+      
         
     public class OrderItem
     {
@@ -212,6 +216,9 @@ namespace openTRANS
             }
             set { /* required for xml serialization */ }
         }
+
+        [XmlElement("REMARKS")]
+        public List<TypedItem> Remarks = new List<TypedItem>();
     }
 
 
