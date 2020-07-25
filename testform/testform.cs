@@ -37,8 +37,8 @@ namespace testform
             ohi.OrderDate = DateTime.Now.Date;
             ohi.CustomerOrderReference.OrderDescr = "MyOrderNr";
 
-            ohi.Remarks.Add(new TypedItem() { Type = "DELIVERY", Value = "MyDeliveryRemark" });
-            ohi.Remarks.Add(new TypedItem() { Type = "", Value = "AnyAdditionalNote" });
+            ohi.Remarks.Add("MyDeliveryRemark", "DELIVERY");
+            ohi.Remarks.Add("AnyAdditionalNote");
 
             o.OrderHeader.ControlInfo.GeneratorInfo = "DXSdata openTRANS Generator";
             o.OrderHeader.ControlInfo.GenerationDate = DateTime.Now;
@@ -121,7 +121,7 @@ namespace testform
                 oi.ProductPriceFix.PriceAmount = 14;
                 //oi.ProductPriceFix.AllowOrChargesFix.AllowOrCharge.Type = AllowOrChargeTypes.Allowance;
 
-                oi.Remarks.Add(new TypedItem() { Type = "", Value = "testItemRemark" });
+                oi.Remarks.Add("testItemRemark");
 
                 o.OrderItemList.Add(oi);
             }

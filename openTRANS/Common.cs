@@ -1,5 +1,6 @@
 ﻿
 using ISO3166;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
@@ -98,11 +99,25 @@ namespace openTRANS
 
         public class TypedItem
         {
+            public TypedItem() //needed for serializer
+            {
+            }
+            public TypedItem(string value = null, string type = null)
+            {
+                Value = value;
+                Type = type;
+            }
+
             [XmlText]
             public string Value;
 
             [XmlAttribute("type")]
             public string Type;
+        }
+
+        public static void Add(this List<TypedItem> list, string value = null, string type = null)
+        {
+            list.Add(new TypedItem(value, type));
         }
 
         public static string GetCountryCode(string countryName)
