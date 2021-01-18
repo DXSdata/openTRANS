@@ -14,6 +14,8 @@ namespace openTRANS
             public const string bmecat = "http://www.bmecat.org/bmecat/2005";
             public const string xmime = "http://www.w3.org/2005/05/xmlmime";
             public const string xsig = "http://www.w3.org/2000/09/xmldsig#";
+
+            public const string custom = "custom";
         }
 
         public static class PartyType

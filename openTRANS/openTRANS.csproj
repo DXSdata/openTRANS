@@ -6,11 +6,25 @@
     <Authors>DXSdata</Authors>
     <Company>DXSdata GmbH</Company>
     <Description>.NET Core / Standard implementation of the openTRANS v2.1 definitions by Fraunhofer IAO</Description>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="ISO3166" Version="1.0.2" />
   </ItemGroup>
+
+  <!-- ignore some useless CS warnings -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591,1573</NoWarn>
+  </PropertyGroup>
+
+
+  <!-- Summary comments in NuGet packages / builds -->
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageProjectUrl>https://www.dxsdata.com/2019/08/opentrans-for-net-core/</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/DXSdata/openTRANS</RepositoryUrl>
+  </PropertyGroup>
 
 </Project>

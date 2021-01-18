@@ -8,7 +8,7 @@ using static openTRANS.Common;
 namespace openTRANS
 {
     [XmlRoot("ORDER", Namespace = "http://www.opentrans.org/XMLSchema/2.1", IsNullable = false)]
-    public class Order
+    public partial class Order
     {
         [XmlAttribute("schemaLocation", Namespace = XmlSchema.InstanceNamespace)]
         public string xsiSchemaLocation = "http://www.opentrans.org/XMLSchema/2.1%20opentrans_2_1.xsd";
@@ -32,7 +32,7 @@ namespace openTRANS
     }
 
 
-    public class OrderHeader
+    public partial class OrderHeader
     {
         [XmlElement("CONTROL_INFO")]
         public ControlInfo ControlInfo = new ControlInfo();
@@ -42,7 +42,7 @@ namespace openTRANS
     }
 
 
-    public class ControlInfo
+    public partial class ControlInfo
     {
         [XmlElement("GENERATOR_INFO")]
         public string GeneratorInfo;
@@ -52,7 +52,7 @@ namespace openTRANS
     }
 
 
-    public class OrderInfo
+    public partial class OrderInfo
     {
         [XmlElement("ORDER_ID")]
         public string OrderId;
@@ -76,10 +76,16 @@ namespace openTRANS
         //will be serialized as array without a "remarks" parent
         [XmlElement("REMARKS")]
         public List<TypedItem> Remarks = new List<TypedItem>();
+
+        [XmlElement("CURRENCY", Namespace = Common.Namespace.bmecat)]
+        public string Currency;
+
+        [XmlElement("PARTIAL_SHIPMENT_ALLOWED")]
+        public bool? PartialShipmentAllowed;
     }
 
 
-    public class DeliveryDate
+    public partial class DeliveryDate
     {
         [XmlAttribute("type")]
         public string Type;
@@ -92,7 +98,7 @@ namespace openTRANS
     }
 
 
-    public class Party
+    public partial class Party
     {
         [XmlElement("PARTY_ID", Namespace = Common.Namespace.bmecat)]
         public PartyId PartyId = new PartyId();
@@ -106,7 +112,7 @@ namespace openTRANS
     }
 
 
-    public class PartyId
+    public partial class PartyId
     {
         [XmlText]
         public string Value;
@@ -116,7 +122,7 @@ namespace openTRANS
     }
 
         
-    public class Address
+    public partial class Address
     {
         [XmlElement("NAME", Namespace = Common.Namespace.bmecat)]
         public string Name;
@@ -150,14 +156,14 @@ namespace openTRANS
     }
 
 
-    public class ContactDetails
+    public partial class ContactDetails
     {
         [XmlElement("CONTACT_NAME", Namespace = Common.Namespace.bmecat)]
         public string ContactName;
     }
 
 
-    public class OrderPartiesReference
+    public partial class OrderPartiesReference
     {
         [XmlElement("BUYER_IDREF", Namespace = Common.Namespace.bmecat)]
         public TypedItem BuyerIdRef = new TypedItem();
@@ -171,14 +177,29 @@ namespace openTRANS
     }
 
 
-    public class CustomerOrderReference
+    public partial class CustomerOrderReference
     {
+        /// <summary>
+        /// Customer's own order number
+        /// </summary>
+        [XmlElement("ORDER_ID")]
+        public string OrderId;
+
         [XmlElement("ORDER_DESCR")]
         public string OrderDescr;
+
+        [XmlElement("LINE_ITEM_ID")]
+        public string LineItemId;
+
+        [XmlElement("ORDER_DATE")]
+        public DateTime? OrderDate;
+
+        [XmlElement("CUSTOMER_IDREF")]
+        public TypedItem CustomerIdRef = new TypedItem();
     }
 
 
-    public class ShipmentPartiesReference
+    public partial class ShipmentPartiesReference
     {
         [XmlElement("DELIVERY_IDREF")]
         public TypedItem DeliveryIdRef = new TypedItem();
@@ -186,7 +207,7 @@ namespace openTRANS
 
       
         
-    public class OrderItem
+    public partial class OrderItem
     {
         [XmlElement("LINE_ITEM_ID")]
         public string LineItemId;
@@ -222,7 +243,7 @@ namespace openTRANS
     }
 
 
-    public class ProductId
+    public partial class ProductId
     {
         [XmlElement("SUPPLIER_PID", Namespace = Common.Namespace.bmecat)]
         public string SupplierPid;
@@ -232,10 +253,14 @@ namespace openTRANS
 
         [XmlElement("DESCRIPTION_SHORT", Namespace = Common.Namespace.bmecat)]
         public string DescriptionShort;
+
+        [XmlElement("DESCRIPTION_LONG", Namespace = Common.Namespace.bmecat)]
+        public string DescriptionLong;
+                
     }
 
 
-    public class Feature
+    public partial class Feature
     {
         [XmlElement("FNAME", Namespace = Common.Namespace.bmecat)]
         public string FName;
@@ -248,17 +273,25 @@ namespace openTRANS
     }
 
     
-    public class ProductPriceFix
+    public partial class ProductPriceFix
     {
         [XmlElement("PRICE_AMOUNT", Namespace = Common.Namespace.bmecat)]
         public decimal PriceAmount;
 
         [XmlElement("ALLOW_OR_CHARGES_FIX")]
         public AllowOrChargesFix AllowOrChargesFix = new AllowOrChargesFix();
+
+        /// <summary>
+        /// Defines which number of items is included in the given price.
+        /// Defaults to 1.
+        /// See documentation for further details.
+        /// </summary>
+        [XmlElement("PRICE_QUANTITY", Namespace = Common.Namespace.bmecat)]
+        public decimal PriceQuantity = 1;
     }
 
 
-    public class AllowOrChargesFix
+    public partial class AllowOrChargesFix
     {
         [XmlElement("ALLOW_OR_CHARGE")]
         public AllowOrCharge AllowOrCharge = new AllowOrCharge();
@@ -268,7 +301,7 @@ namespace openTRANS
     }
 
 
-    public class AllowOrCharge
+    public partial class AllowOrCharge
     {
         [XmlAttribute("type")]
         public string Type;
@@ -282,7 +315,7 @@ namespace openTRANS
     }
 
 
-    public class AllowOrChargeValue
+    public partial class AllowOrChargeValue
     {
         [XmlElement("AOC_PERCENTAGE_FACTOR")]
         public decimal AocPercentageFactor;
@@ -290,7 +323,7 @@ namespace openTRANS
     }
      
     
-    public class OrderSummary
+    public partial class OrderSummary
     {
         public OrderSummary()
         {

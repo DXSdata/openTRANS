@@ -55,6 +55,7 @@ namespace testform
             p2.PartyRole = PartyRole.Buyer;
 
             p2.Address.Name = "MyCompany";
+            //p2.Address.Name2 = "MyCustomName2";
             p2.Address.ContactDetails.ContactName = "MyEmployee";
             p2.Address.Street = "MyStreet";
             p2.Address.Zip = "MyZipCode";
