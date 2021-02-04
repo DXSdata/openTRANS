@@ -43,6 +43,8 @@ namespace testform
             o.OrderHeader.ControlInfo.GeneratorInfo = "DXSdata openTRANS Generator";
             o.OrderHeader.ControlInfo.GenerationDate = DateTime.Now;
 
+            o.OrderHeader.SourcingInfo.Agreement.AgreementId = "TestAgreement123";
+
 
             var p1 = new Party();
             p1.PartyId.Value = "TestSupplier";

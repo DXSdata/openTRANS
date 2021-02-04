@@ -39,6 +39,9 @@ namespace openTRANS
 
         [XmlElement("ORDER_INFO")]
         public OrderInfo OrderInfo = new OrderInfo();
+
+        [XmlElement("SOURCING_INFO")]
+        public SourcingInfo SourcingInfo = new SourcingInfo();
     }
 
 
@@ -84,6 +87,17 @@ namespace openTRANS
         public bool? PartialShipmentAllowed;
     }
 
+    public partial class SourcingInfo
+    {
+        [XmlElement("AGREEMENT")]
+        public Agreement Agreement = new Agreement();        
+    }
+
+    public partial class Agreement
+    {
+        [XmlElement("AGREEMENT_ID")]
+        public string AgreementId;
+    }
 
     public partial class DeliveryDate
     {
