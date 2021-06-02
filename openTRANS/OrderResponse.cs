@@ -25,8 +25,9 @@ namespace openTRANS {
         [XmlElement("TOTAL_AMOUNT")]
         public decimal TotalAmount;
 
-        [XmlElement("ALLOW_OR_CHARGES_FIX")]
-        public AllowOrChargesFix AllowOrChargesFix = new AllowOrChargesFix();
+        [XmlArray("ALLOW_OR_CHARGES_FIX")]
+        [XmlArrayItem("ALLOW_OR_CHARGE")]
+        public List<AllowOrCharge> AllowOrChargesFix = new List<AllowOrCharge>();
 
     }
 

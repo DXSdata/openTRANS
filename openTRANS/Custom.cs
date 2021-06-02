@@ -47,4 +47,21 @@ namespace openTRANS
         public const string Height = "Height";
         public const string MaterialGroup = "MaterialGroup";
     }
+
+    public partial class AllowOrChargesFix {
+        [XmlElement("ALLOW_OR_CHARGE_SEQUENCE")]
+        public int AllowOrChageSequence;
+
+        [XmlElement("ALLOW_OR_CHARGE_NAME")]
+        public string AllowOrChargeName;
+
+        [XmlElement("ALLOW_OR_CHARGE_DESCR")]
+        public string AllowOrChargeDescr;
+
+    }
+
+    public partial class AllowOrChargeValue {
+        [XmlElement("AOC_MONETARY_AMOUNT")]
+        public decimal AocMonetaryAmount;
+    }
 }
