@@ -48,7 +48,7 @@ namespace openTRANS
         public const string MaterialGroup = "MaterialGroup";
     }
 
-    public partial class AllowOrChargesFix {
+    public partial class AllowOrCharge {
         [XmlElement("ALLOW_OR_CHARGE_SEQUENCE")]
         public int AllowOrChageSequence;
 
@@ -57,7 +57,6 @@ namespace openTRANS
 
         [XmlElement("ALLOW_OR_CHARGE_DESCR")]
         public string AllowOrChargeDescr;
-
     }
 
     public partial class AllowOrChargeValue {
