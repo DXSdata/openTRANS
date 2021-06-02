@@ -74,7 +74,15 @@ namespace openTRANS {
         public decimal PriceLineAmount;
 
         [XmlElement("REMARKS")]
-        public string Remarks;
+        public Remarks Remarks = new Remarks();
+    }
+
+    public partial class Remarks {
+        [XmlText]
+        public string Value;
+
+        [XmlAttribute("type")]
+        public string Type;
     }
 
     public partial class OrderResponseHeader {
