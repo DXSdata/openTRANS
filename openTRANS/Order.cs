@@ -292,8 +292,9 @@ namespace openTRANS
         [XmlElement("PRICE_AMOUNT", Namespace = Common.Namespace.bmecat)]
         public decimal PriceAmount;
 
-        [XmlElement("ALLOW_OR_CHARGES_FIX")]
-        public AllowOrChargesFix AllowOrChargesFix = new AllowOrChargesFix();
+        [XmlArray("ALLOW_OR_CHARGES_FIX")]
+        [XmlArrayItem("ALLOW_OR_CHARGE")]
+        public List<AllowOrCharge> AllowOrChargesFix = new List<AllowOrCharge>();
 
         /// <summary>
         /// Defines which number of items is included in the given price.
