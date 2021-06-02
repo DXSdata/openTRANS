@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace openTRANS
 {
@@ -46,21 +43,5 @@ namespace openTRANS
         public const string Width = "Width";
         public const string Height = "Height";
         public const string MaterialGroup = "MaterialGroup";
-    }
-
-    public partial class AllowOrCharge {
-        [XmlElement("ALLOW_OR_CHARGE_SEQUENCE")]
-        public int AllowOrChageSequence;
-
-        [XmlElement("ALLOW_OR_CHARGE_NAME")]
-        public string AllowOrChargeName;
-
-        [XmlElement("ALLOW_OR_CHARGE_DESCR")]
-        public string AllowOrChargeDescr;
-    }
-
-    public partial class AllowOrChargeValue {
-        [XmlElement("AOC_MONETARY_AMOUNT")]
-        public decimal AocMonetaryAmount;
     }
 }

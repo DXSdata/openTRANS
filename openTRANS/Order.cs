@@ -320,12 +320,20 @@ namespace openTRANS
         [XmlAttribute("type")]
         public string Type;
 
+        [XmlElement("ALLOW_OR_CHARGE_SEQUENCE")]
+        public int AllowOrChageSequence;
+
+        [XmlElement("ALLOW_OR_CHARGE_NAME")]
+        public string AllowOrChargeName;
+
         [XmlElement("ALLOW_OR_CHARGE_TYPE")]
         public string AllowOrChargeType;
 
+        [XmlElement("ALLOW_OR_CHARGE_DESCR")]
+        public string AllowOrChargeDescr;       
+
         [XmlElement("ALLOW_OR_CHARGE_VALUE")]
         public AllowOrChargeValue AllowOrChargeValue = new AllowOrChargeValue();
-
     }
 
 
@@ -334,9 +342,22 @@ namespace openTRANS
         [XmlElement("AOC_PERCENTAGE_FACTOR")]
         public decimal AocPercentageFactor;
 
+        [XmlElement("AOC_MONETARY_AMOUNT")]
+        public decimal AocMonetaryAmount;
+
+        [XmlElement("AOC_ORDER_UNITS_COUNT")]
+        public AocOrderUnitsCount AocOrderUnitsCount = new AocOrderUnitsCount();
+
+        [XmlElement("AOC_ADDITIONAL_ITEMS")]
+        public string AocAdditionalItems;
+
     }
-     
-    
+
+    public class AocOrderUnitsCount {
+        [XmlAttribute("type")]
+        public string Type;
+    }
+
     public partial class OrderSummary
     {
         public OrderSummary()
