@@ -130,7 +130,11 @@ namespace testform
             }
 
             var ot = new XmlCreator(o);
-            textBox1.Text = ot.Result;
+            //textBox1.Text = ot.Result;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+            OrderResponse response = new XmlReader(textBox1.Text).Result;
         }
     }
 }
