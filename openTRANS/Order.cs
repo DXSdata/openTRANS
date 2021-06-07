@@ -13,6 +13,12 @@ namespace openTRANS
         [XmlAttribute("schemaLocation", Namespace = XmlSchema.InstanceNamespace)]
         public string xsiSchemaLocation = "http://www.opentrans.org/XMLSchema/2.1%20opentrans_2_1.xsd";
 
+        [XmlAttribute("version")]
+        public string Version = "2.1";
+
+        [XmlAttribute("type")]
+        public string Type = OrderType.Standard;
+
         [XmlElement("ORDER_HEADER")]
         public OrderHeader OrderHeader = new OrderHeader();
 
@@ -80,7 +86,7 @@ namespace openTRANS
         [XmlElement("REMARKS")]
         public List<TypedItem> Remarks = new List<TypedItem>();
 
-        [XmlElement("CURRENCY", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("CURRENCY", Namespace = Namespace.bmecat)]
         public string Currency;
 
         [XmlElement("PARTIAL_SHIPMENT_ALLOWED")]
@@ -114,7 +120,7 @@ namespace openTRANS
 
     public partial class Party
     {
-        [XmlElement("PARTY_ID", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("PARTY_ID", Namespace = Namespace.bmecat)]
         public PartyId PartyId = new PartyId();
                 
         [XmlElement("PARTY_ROLE")]
@@ -147,42 +153,42 @@ namespace openTRANS
         [XmlElement("STREET", Namespace = Common.Namespace.bmecat)]
         public string Street;
 
-        [XmlElement("ZIP", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("ZIP", Namespace = Namespace.bmecat)]
         public string Zip;
 
-        [XmlElement("CITY", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("CITY", Namespace = Namespace.bmecat)]
         public string City;
 
-        [XmlElement("COUNTRY", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("COUNTRY", Namespace = Namespace.bmecat)]
         public string Country;
 
-        [XmlElement("COUNTRY_CODED", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("COUNTRY_CODED", Namespace = Namespace.bmecat)]
         public string CountryCoded;
 
-        [XmlElement("PHONE", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("PHONE", Namespace = Namespace.bmecat)]
         public TypedItem Phone = new TypedItem();
 
-        [XmlElement("FAX", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("FAX", Namespace = Namespace.bmecat)]
         public TypedItem Fax = new TypedItem();
 
-        [XmlElement("EMAIL", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("EMAIL", Namespace = Namespace.bmecat)]
         public string Email;
     }
 
 
     public partial class ContactDetails
     {
-        [XmlElement("CONTACT_NAME", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("CONTACT_NAME", Namespace = Namespace.bmecat)]
         public string ContactName;
     }
 
 
     public partial class OrderPartiesReference
     {
-        [XmlElement("BUYER_IDREF", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("BUYER_IDREF", Namespace = Namespace.bmecat)]
         public TypedItem BuyerIdRef = new TypedItem();
 
-        [XmlElement("SUPPLIER_IDREF", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("SUPPLIER_IDREF", Namespace = Namespace.bmecat)]
         public TypedItem SupplierIdRef = new TypedItem();
 
         [XmlElement("SHIPMENT_PARTIES_REFERENCE")]
@@ -236,7 +242,7 @@ namespace openTRANS
         [XmlElement("QUANTITY")]
         public decimal Quantity;
 
-        [XmlElement("ORDER_UNIT", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("ORDER_UNIT", Namespace = Namespace.bmecat)]
         public string OrderUnit;
 
         [XmlElement("PRODUCT_PRICE_FIX")]
@@ -259,16 +265,16 @@ namespace openTRANS
 
     public partial class ProductId
     {
-        [XmlElement("SUPPLIER_PID", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("SUPPLIER_PID", Namespace = Namespace.bmecat)]
         public string SupplierPid;
 
-        [XmlElement("BUYER_PID", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("BUYER_PID", Namespace = Namespace.bmecat)]
         public TypedItem BuyerPid = new TypedItem();
 
-        [XmlElement("DESCRIPTION_SHORT", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("DESCRIPTION_SHORT", Namespace = Namespace.bmecat)]
         public string DescriptionShort;
 
-        [XmlElement("DESCRIPTION_LONG", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("DESCRIPTION_LONG", Namespace = Namespace.bmecat)]
         public string DescriptionLong;
                 
     }
@@ -276,20 +282,20 @@ namespace openTRANS
 
     public partial class Feature
     {
-        [XmlElement("FNAME", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("FNAME", Namespace = Namespace.bmecat)]
         public string FName;
 
-        [XmlElement("FVALUE", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("FVALUE", Namespace = Namespace.bmecat)]
         public string FValue;
 
-        [XmlElement("FUNIT", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("FUNIT", Namespace = Namespace.bmecat)]
         public string FUnit;
     }
 
     
     public partial class ProductPriceFix
     {
-        [XmlElement("PRICE_AMOUNT", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("PRICE_AMOUNT", Namespace = Namespace.bmecat)]
         public decimal PriceAmount;
 
         [XmlElement("ALLOW_OR_CHARGES_FIX")]
@@ -300,7 +306,7 @@ namespace openTRANS
         /// Defaults to 1.
         /// See documentation for further details.
         /// </summary>
-        [XmlElement("PRICE_QUANTITY", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("PRICE_QUANTITY", Namespace = Namespace.bmecat)]
         public decimal PriceQuantity = 1;
     }
 

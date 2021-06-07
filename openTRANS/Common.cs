@@ -8,6 +8,12 @@ namespace openTRANS
 {
     public static class Common
     {
+        public static class OrderType {
+            public const string Standard = "standard";
+            public const string Express = "express";
+            public const string Release = "release";
+            public const string Consignment = "consignment";
+        }
         public static class Namespace
         {
             public const string xsi = "http://www.w3.org/2001/XMLSchema-instance";
