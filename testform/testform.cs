@@ -125,6 +125,8 @@ namespace testform
                 //oi.ProductPriceFix.AllowOrChargesFix.AllowOrCharge.Type = AllowOrChargeTypes.Allowance;
 
                 oi.Remarks.Add("testItemRemark");
+                oi.Remarks.Add("test 1");
+                oi.Remarks.Add("test 2", "GENERAL");
 
                 o.OrderItemList.Add(oi);
             }
