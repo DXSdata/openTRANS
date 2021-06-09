@@ -13,6 +13,12 @@
     <PackageReference Include="ISO3166" Version="1.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="INVOICE\" />
+    <Folder Include="DISPATCHNOTIFICATION\" />
+    <Folder Include="QUOTATION\" />
+  </ItemGroup>
+
   <!-- ignore some useless CS warnings -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;1591,1573</NoWarn>
