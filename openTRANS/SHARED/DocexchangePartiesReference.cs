@@ -2,7 +2,7 @@
 using static openTRANS.Common;
 
 namespace openTRANS {
-    public class DocexchangePartiesReference {
+    public class DocExchangePartiesReference {
         [XmlElement("DOCUMENT_ISSUER_IDREF")]
         public TypedItem DocumentIssuerIdRef = new TypedItem();
 

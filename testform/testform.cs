@@ -56,6 +56,7 @@ namespace testform
             p2.PartyId.Type = PartyType.SupplierSpecific;
             p2.PartyRole = PartyRole.Buyer;
 
+            p2.Address = new Address();
             p2.Address.Name = "MyCompany";
             //p2.Address.Name2 = "MyCustomName2";
             p2.Address.ContactDetails.ContactName = "MyEmployee";
@@ -64,13 +65,16 @@ namespace testform
             p2.Address.City = "MyCity";
             p2.Address.Country = "Austria";
             p2.Address.CountryCoded = Common.GetCountryCode(p2.Address.Country);
+            p2.Address.Phone = new TypedItem();
             p2.Address.Phone.Value = "+1234";
-            p2.Address.Phone.Value = PhoneType.Office;
+            p2.Address.Phone.Type = PhoneType.Office;
+            p2.Address.Fax = new TypedItem();
             p2.Address.Fax.Value = "+5678";
             p2.Address.Fax.Type = PhoneType.Office;
             p2.Address.Email = "me@example.com";
 
             var p3 = new Party();
+            p3.Address = new Address();
             p3.PartyId.Value = "MyCustomerNumberOfSupplier";
             p3.PartyId.Type = PartyType.ERPlusSpecific;
             p3.PartyRole = PartyRole.Delivery;
@@ -85,6 +89,7 @@ namespace testform
             o.OrderHeader.OrderInfo.OrderPartiesReference.BuyerIdRef.Type = PartyType.SupplierSpecific;
             o.OrderHeader.OrderInfo.OrderPartiesReference.SupplierIdRef.Value = "TestSupplier";
             o.OrderHeader.OrderInfo.OrderPartiesReference.SupplierIdRef.Type = PartyType.BuyerSpecific;
+            o.OrderHeader.OrderInfo.OrderPartiesReference.ShipmentPartiesReference = new ShipmentPartiesReference();
             o.OrderHeader.OrderInfo.OrderPartiesReference.ShipmentPartiesReference.DeliveryIdRef.Value = "MyCustomerNumberOfSupplier";
             o.OrderHeader.OrderInfo.OrderPartiesReference.ShipmentPartiesReference.DeliveryIdRef.Type = PartyType.SupplierSpecific;
 
@@ -108,8 +113,9 @@ namespace testform
                     if (!string.IsNullOrWhiteSpace(feature.fval))
                     {
                         var f = new Feature();
+                        f.FValue = new List<string>();
                         f.FName = feature.fname;
-                        f.FValue = feature.fval;
+                        f.FValue.Add(feature.fval);
                         f.FUnit = feature.funit;
                         oi.ProductFeatures.Add(f);
                     }

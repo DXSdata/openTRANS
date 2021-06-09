@@ -2,28 +2,27 @@
 using System.Xml.Serialization;
 
 namespace openTRANS {
-    public partial class Feature
-    {
+    public partial class Feature {
         [XmlElement("FNAME", Namespace = Common.Namespace.bmecat)]
         public string FName;
 
-        [XmlElement("FNAME", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("FT_IDREF", Namespace = Common.Namespace.bmecat)]
         public string FTIdRef;
 
-        [XmlElement("FNAME", Namespace = Common.Namespace.bmecat)]
-        public FTemplate FTemplate = new FTemplate();
+        [XmlElement("FTEMPLATE", Namespace = Common.Namespace.bmecat)]
+        public FTemplate FTemplate;
 
         [XmlElement("FVALUE", Namespace = Common.Namespace.bmecat)]
-        public List<string> FValue = new List<string>();
+        public List<string> FValue;
 
         [XmlElement("VALUE_IDREF", Namespace = Common.Namespace.bmecat)]
-        public List<string> ValueIdRef = new List<string>();
+        public List<string> ValueIdRef;
 
         [XmlElement("FUNIT", Namespace = Common.Namespace.bmecat)]
         public string FUnit;
 
         [XmlElement("FORDER", Namespace = Common.Namespace.bmecat)]
-        public int FOrder;
+        public int FOrder = -1;
 
         [XmlElement("FDESCR", Namespace = Common.Namespace.bmecat)]
         public string FDescription;

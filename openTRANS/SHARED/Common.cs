@@ -90,6 +90,22 @@ namespace openTRANS {
             public const string Fixed = "fixed";
         }
 
+        public static class PriceFlagType {
+            public const string InclDuty = "incl_duty";
+            public const string InclFreight = "incl_freight";
+            public const string InclInsurance = "incl_insurance";
+            public const string InclPacking = "incl_packing";
+        }
+
+        public static class TaxCategory {
+            public const string Exemption = "exemption";
+            public const string ParkingRate = "parking_rate";
+            public const string ReducedRate = "reduced_rate";
+            public const string StandardRate = "standard_rate";
+            public const string SuperReducedRate = "super_reduced_rate";
+            public const string ZeroRate = "zero_rate";
+        }
+
         public class TypedItem {
             public TypedItem() //needed for serializer
             {
@@ -108,8 +124,8 @@ namespace openTRANS {
 
         public class TypedLangItem : TypedItem {
             public TypedLangItem() { }
-            public TypedLangItem(string value = null, string type= null, string lang = null)
-                :base(value, type){
+            public TypedLangItem(string value = null, string type = null, string lang = null)
+                : base(value, type) {
                 Lang = lang;
             }
             [XmlAttribute("lang")]

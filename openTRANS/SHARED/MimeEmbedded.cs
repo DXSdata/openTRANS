@@ -5,13 +5,13 @@ namespace openTRANS {
         [XmlAttribute("lang")]
         public string Lang;
 
-        [XmlElement("MIME_DATA")]
+        [XmlElement("MIME_DATA", IsNullable = false)]
         public MimeData MimeData = new MimeData();
 
-        [XmlElement("FILE_NAME")]
-        public string FileName;
+        [XmlElement("FILE_NAME", IsNullable =false)]
+        public string FileName = null;
 
-        [XmlElement("FILE_SIZE")]
+        [XmlElement("FILE_SIZE", IsNullable = false)]
         public uint FileSize;
     }
 }

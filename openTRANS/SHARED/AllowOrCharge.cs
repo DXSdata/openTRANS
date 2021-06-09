@@ -20,5 +20,8 @@ namespace openTRANS {
 
         [XmlElement("ALLOW_OR_CHARGE_VALUE")]
         public AllowOrChargeValue AllowOrChargeValue = new AllowOrChargeValue();
+
+        [XmlElement("ALLOW_OR_CHARGE_BASE")]
+        public float AllowOrChargeBase;
     }
 }

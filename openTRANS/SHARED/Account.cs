@@ -9,13 +9,13 @@ namespace openTRANS {
         [XmlElement("BANK_ACCOUNT")]
         public TypedItem BankAccount = new TypedItem();
 
-        [XmlElement("BANK_CODE")]
-        public TypedItem BankCode = new TypedItem();
+        [XmlElement("BANK_CODE", IsNullable = false)]
+        public TypedItem BankCode = null;
 
-        [XmlElement("BANK_NAME")]
-        public string BankName;
+        [XmlElement("BANK_NAME", IsNullable = false)]
+        public string BankName = null;
 
-        [XmlElement("BANK_COUNTRY")]
-        public string BankCountry;
+        [XmlElement("BANK_COUNTRY", IsNullable = false)]
+        public string BankCountry = null;
     }
 }

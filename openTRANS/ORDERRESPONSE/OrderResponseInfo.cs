@@ -15,7 +15,7 @@ namespace openTRANS {
         public DateTime OrderDate;
 
         [XmlElement("ALT_CUSTOMER_ORDER_ID")]
-        public List<string> AltCustomerOrderId = new List<string>();
+        public List<string> AltCustomerOrderId;
 
         [XmlElement("SUPPLIER_ORDER_ID")]
         public string SupplierOrderId;
@@ -24,10 +24,10 @@ namespace openTRANS {
         public uint OrderchangeSequenceId;
 
         [XmlElement("DELIVERY_DATE")]
-        public DeliveryDate DeliveryDate = new DeliveryDate();
+        public DeliveryDate DeliveryDate;
 
         [XmlElement("LANGUAGE", Namespace = Namespace.bmecat)]
-        public Language Language = new Language();
+        public Language Language;
 
         [XmlElement("MIME_ROOT", Namespace = Namespace.bmecat)]
         public string MimeRoot;
@@ -40,15 +40,15 @@ namespace openTRANS {
         public OrderPartiesReference OrderPartiesReference = new OrderPartiesReference();
 
         [XmlElement("DOCEXCHANGE_PARTIES_REFERENCE")]
-        public DocexchangePartiesReference DocexchangePartiesReference = new DocexchangePartiesReference();
+        public DocExchangePartiesReference DocexchangePartiesReference;
 
         [XmlElement("CURRENCY", Namespace = Namespace.bmecat)]
         public string Currency;
 
         [XmlElement("MIME_INFO")]
-        public MimeInfo MimeInfo = new MimeInfo();
+        public MimeInfo MimeInfo;
 
         [XmlElement("REMARKS")]
-        public List<TypedItem> Remarks = new List<TypedItem>();
+        public List<TypedItem> Remarks;
     }
 }
