@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using static openTRANS.Common;
 
 namespace openTRANS {
     public partial class OrderResponseInfo {
@@ -13,11 +14,23 @@ namespace openTRANS {
         [XmlElement("ORDER_DATE")]
         public DateTime OrderDate;
 
+        [XmlElement("ALT_CUSTOMER_ORDER_ID")]
+        public List<string> AltCustomerOrderId = new List<string>();
+
         [XmlElement("SUPPLIER_ORDER_ID")]
         public string SupplierOrderId;
 
+        [XmlElement("ORDERCHANGE_SEQUENCE_ID")]
+        public uint OrderchangeSequenceId;
+
         [XmlElement("DELIVERY_DATE")]
         public DeliveryDate DeliveryDate = new DeliveryDate();
+
+        [XmlElement("LANGUAGE", Namespace = Namespace.bmecat)]
+        public Language Language = new Language();
+
+        [XmlElement("MIME_ROOT", Namespace = Namespace.bmecat)]
+        public string MimeRoot;
 
         [XmlArray("PARTIES")]
         [XmlArrayItem("PARTY")]
@@ -25,5 +38,17 @@ namespace openTRANS {
 
         [XmlElement("ORDER_PARTIES_REFERENCE")]
         public OrderPartiesReference OrderPartiesReference = new OrderPartiesReference();
+
+        [XmlElement("DOCEXCHANGE_PARTIES_REFERENCE")]
+        public DocexchangePartiesReference DocexchangePartiesReference = new DocexchangePartiesReference();
+
+        [XmlElement("CURRENCY", Namespace = Namespace.bmecat)]
+        public string Currency;
+
+        [XmlElement("MIME_INFO")]
+        public MimeInfo MimeInfo = new MimeInfo();
+
+        [XmlElement("REMARKS")]
+        public List<TypedItem> Remarks = new List<TypedItem>();
     }
 }

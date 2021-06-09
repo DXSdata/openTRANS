@@ -7,11 +7,6 @@ namespace openTRANS
     /// </summary>
     public partial class Address
     {
-        [XmlElement("NAME2", Namespace = Common.Namespace.custom)]
-        public string Name2;
-
-        [XmlElement("NAME3", Namespace = Common.Namespace.custom)]
-        public string Name3;
 
     }
 

@@ -6,5 +6,11 @@ namespace openTRANS {
     {
         [XmlElement("DELIVERY_IDREF")]
         public TypedItem DeliveryIdRef = new TypedItem();
+
+        [XmlElement("FINAL_DELIVERY_IDREF")]
+        public TypedItem FinalDeliveryIdRef = new TypedItem();
+
+        [XmlElement("DELIVERER_IDREF")]
+        public TypedItem DelivererIdRef = new TypedItem();
     }
 }

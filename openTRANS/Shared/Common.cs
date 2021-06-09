@@ -4,12 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace openTRANS
-{
-    public static class Common
-    {
-        public static class Namespace
-        {
+namespace openTRANS {
+    public static class Common {
+        public static class Namespace {
             public const string xsi = "http://www.w3.org/2001/XMLSchema-instance";
             public const string bmecat = "http://www.bmecat.org/bmecat/2005";
             public const string xmime = "http://www.w3.org/2005/05/xmlmime";
@@ -18,24 +15,22 @@ namespace openTRANS
             public const string custom = "custom";
         }
 
-        public static class PartyType
-        {
-            public const string BuyerSpecific = "buyer_specific"; 
+        public static class PartyType {
+            public const string BuyerSpecific = "buyer_specific";
             public const string CustomerSpecific = "customer_specific,";
-            public const string DUNS = "duns"; 
-            public const string ILN = "iln"; 
-            public const string GLN = "gln"; 
+            public const string DUNS = "duns";
+            public const string ILN = "iln";
+            public const string GLN = "gln";
             public const string PartySpecific = "party_specific";
             public const string SupplierSpecific = "supplier_specific";
 
             /// <summary>
             /// Not in OT Standard; for custom use
             /// </summary>
-            public const string ERPlusSpecific = "erplus_specific";            
+            public const string ERPlusSpecific = "erplus_specific";
         }
 
-        public static class PartyRole
-        {
+        public static class PartyRole {
             public const string Buyer = "buyer";
             public const string CentralRegulator = "central_regulator";
             public const string Customer = "customer";
@@ -54,11 +49,10 @@ namespace openTRANS
             public const string StandardizationBody = "standardization_body";
             public const string Supplier = "supplier";
             public const string TrustedThirdParty = "trustedthirdparty";
-            public const string Other = "other";            
+            public const string Other = "other";
         }
 
-        public static class OrderUnit
-        {
+        public static class OrderUnit {
             public const string Centimeter = "CMT";
             public const string Piece = "C62";
             public const string Kilogram = "KGM";
@@ -72,11 +66,10 @@ namespace openTRANS
         public static class AllowOrChargeTypes //exceptional plural to differ from AllowOrChargeType class
         {
             public const string Allowance = "allowance";
-            public const string Surcharge = "surcharge";            
+            public const string Surcharge = "surcharge";
         }
 
-        public static class AllowOrChargeTypeType
-        {
+        public static class AllowOrChargeTypeType {
             public const string ProjectBonus = "project_bonus";
             public const string OverPackaging = "overpackaging";
             public const string Rebate = "rebate";
@@ -86,26 +79,22 @@ namespace openTRANS
             public const string Toll = "toll";
         }
 
-        public static class PhoneType
-        {
+        public static class PhoneType {
             public const string Mobile = "mobile";
             public const string Office = "office";
-            public const string Private = "private";            
+            public const string Private = "private";
         }
 
-        public static class DeliveryDateType
-        {
+        public static class DeliveryDateType {
             public const string Optional = "optional";
             public const string Fixed = "fixed";
         }
 
-        public class TypedItem
-        {
+        public class TypedItem {
             public TypedItem() //needed for serializer
             {
             }
-            public TypedItem(string value = null, string type = null)
-            {
+            public TypedItem(string value = null, string type = null) {
                 Value = value;
                 Type = type;
             }
@@ -117,13 +106,115 @@ namespace openTRANS
             public string Type;
         }
 
-        public static void Add(this List<TypedItem> list, string value = null, string type = null)
-        {
+        public class TypedLangItem : TypedItem {
+            public TypedLangItem() { }
+            public TypedLangItem(string value = null, string type= null, string lang = null)
+                :base(value, type){
+                Lang = lang;
+            }
+            [XmlAttribute("lang")]
+            public string Lang;
+        }
+
+        public static class MimeTypeType {
+            public const string PDF = "application/pdf";
+            public const string XML = "application/xml";
+            public const string GIF = "image/gif";
+            public const string JPEG = "image/jpeg";
+            public const string HTML = "text/html";
+            public const string TXT = "text/plain";
+            public const string URL = "url";
+        }
+
+        public class Interval {
+            public Interval() {
+
+            }
+            public Interval(decimal value = 0, string intervalType = null) {
+                IntervalType = intervalType;
+                Value = value;
+            }
+
+            [XmlAttribute("intervaltype")]
+            public string IntervalType;
+            [XmlText]
+            public decimal Value;
+        }
+
+        public class IntervalType {
+            public const string Exclude = "exclude";
+            public const string Include = "include";
+        }
+
+        public static class MimePurposeType {
+            public const string Conformity = "conformity";
+            public const string DataSheet = "data_sheet";
+            public const string Detail = "detail";
+            public const string Directions = "directions";
+            public const string FaxImage = "fax_image";
+            public const string FreehandSketch = "freehand_sketch";
+            public const string Icon = "icon";
+            public const string Logo = "logo";
+            public const string Manual = "manual";
+            public const string MountingGuidelines = "mounting_guidelines";
+            public const string Normal = "normal";
+            public const string OriginalDocument = "original_document";
+            public const string RepairManual = "repair_manual";
+            public const string SafetyDataSheet = "safety_data_sheet";
+            public const string SignatureFile = "signatur_file";
+            public const string ServiceDescription = "service_descr";
+            public const string ServiceRecord = "service_record";
+            public const string Thumbnail = "thumbnail";
+            public const string VerificationReport = "verification_report";
+            public const string Warranty = "warranty";
+            public const string Others = "others";
+
+        }
+
+        public class FileHashType {
+            public const string SHA512 = "SHA512";
+            public const string SHA384 = "SHA384";
+            public const string SHA256 = "SHA256";
+            public const string SHA1 = "SHA1";
+            public const string MD5 = "MD5";
+            public const string RIPEMD128 = "RIPEMD128";
+            public const string RIPEMD160 = "RIPEMD160";
+            public const string RIPEMD256 = "RIPEMD256";
+            public const string RIPEMD320 = "RIPEMD320";
+            public const string Tiger192 = "Tiger192";
+            public const string Tiger160 = "Tiger160";
+            public const string Tiger128 = "Tiger128";
+            public const string HAVAL = "HAVAL";
+            public const string PANAMA = "PANAMA";
+            public const string WHIRLPOOL = "WHIRLPOOL";
+            public const string LMHash = "LMHash";
+            public const string NTLM = "NTLM";
+            public const string Custom = "";
+        }
+
+        public class FValueType {
+            public const string Choice = "choice";
+            public const string Range = "range";
+            public const string Set = "set";
+        }
+
+        public class FTFacetType {
+            public const string MinLength = "minLength";
+            public const string MaxLength = "maxLength";
+            public const string MinInclusive = "minInclusive";
+            public const string MaxInclusive = "maxInclusive";
+            public const string MinExclusive = "minExclusive";
+            public const string MaxExclusive = "maxExclusive";
+            public const string TotalDigits = "totalDigits";
+            public const string FractionDigits = "fractionDigits";
+        }
+
+
+        public static void Add(this List<TypedItem> list, string value = null, string type = null) {
             list.Add(new TypedItem(value, type));
         }
 
-        public static string GetCountryCode(string countryName)
-        {
+        public static string GetCountryCode(string countryName) {
             var country = Country.List.FirstOrDefault(c => c.Name == countryName);
 
             return country?.ThreeLetterCode;
