@@ -15,6 +15,11 @@ namespace openTRANS {
         public List<OrderResponseItem> OrderResponseItemList = new List<OrderResponseItem>();
 
         [XmlElement("ORDERRESPONSE_SUMMARY")]
-        public OrderResponseSummary OrderResponseSummary = new OrderResponseSummary();
+        public OrderResponseSummary OrderResponseSummary {
+            get {
+                return new OrderResponseSummary(this);
+            }
+            set { }
+        }
     }
 }
