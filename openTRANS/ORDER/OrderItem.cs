@@ -36,5 +36,9 @@ namespace openTRANS {
 
         [XmlElement("REMARKS")]
         public List<TypedItem> Remarks = new List<TypedItem>();
+
+        [XmlElement("DELIVERY_DATE")]
+        public DeliveryDate DeliveryDate = new DeliveryDate();
+
     }
 }
