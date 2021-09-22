@@ -29,7 +29,7 @@ namespace openTRANS {
         [XmlElement("REMARKS")]
         public List<TypedItem> Remarks = new List<TypedItem>();
 
-        [XmlElement("CURRENCY", Namespace = Common.Namespace.bmecat)]
+        [XmlElement("CURRENCY", Namespace = Namespace.bmecat)]
         public string Currency;
 
         [XmlElement("PARTIAL_SHIPMENT_ALLOWED")]

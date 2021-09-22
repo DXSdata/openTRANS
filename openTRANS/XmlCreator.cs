@@ -9,26 +9,23 @@ namespace openTRANS
 {
     public class XmlCreator
     {
-        private string xmlVersion = "1.0";
-        private Encoding encoding = new UpperCaseUTF8Encoding(); //Previously Encoding.Utf8; in case of changing also change StringWriter below; would otherwise produce wrong xml encoding attribute
-        private bool standalone = true;
+        //private readonly string xmlVersion = "1.0";
+        //private readonly Encoding encoding = new UpperCaseUTF8Encoding(); //Previously Encoding.Utf8; in case of changing also change StringWriter below; would otherwise produce wrong xml encoding attribute
+        //private readonly bool standalone = true;
 
-        private XNamespace xsi = "http://www.w3.org/2001/XMLSchema-instance";
+        //private readonly XNamespace xsi = "http://www.w3.org/2001/XMLSchema-instance";
         
-        private Order order;
+        private readonly Order order;
 
-        public XmlCreator(Order order)
-        {
-            this.order = order;
-        }
-               
+        public XmlCreator(Order order) => this.order = order;
+
         public string Result
         {
             get
             {
-                var xdoc = new XDocument(
-                    new XDeclaration(xmlVersion, encoding.WebName, standalone ? "yes" : "no")
-                    );
+                //var xdoc = new XDocument(
+                //    new XDeclaration(xmlVersion, encoding.WebName, standalone ? "yes" : "no")
+                //    );
 
                
                 var xmlns = new XmlSerializerNamespaces();
