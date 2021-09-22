@@ -62,21 +62,16 @@ namespace openTRANS
         /// https://stackoverflow.com/questions/4291332/utf-8-in-uppercase
         /// </summary>
         public class UpperCaseUTF8Encoding : UTF8Encoding
-        {           
+        {
 
-            public override string WebName
-            {
-                get { return base.WebName.ToUpper(); }
-            }
+            public override string WebName => base.WebName.ToUpper();
 
             public static UpperCaseUTF8Encoding UpperCaseUTF8
             {
                 get
                 {
                     if (upperCaseUtf8Encoding == null)
-                    {
                         upperCaseUtf8Encoding = new UpperCaseUTF8Encoding();
-                    }
                     return upperCaseUtf8Encoding;
                 }
             }
