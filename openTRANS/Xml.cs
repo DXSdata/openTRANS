@@ -30,7 +30,7 @@ namespace openTRANS {
             }
         }
 
-        public static T Deserialize<T>(string xml) {
+        public static T Deserialize<T>(string xml) where T : class, new() {
             var serializer = new XmlSerializer(typeof(T));
 
             using (TextReader reader = new StringReader(xml)) {
