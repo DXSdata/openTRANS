@@ -1,7 +1,9 @@
 ﻿using System.Xml.Serialization;
 
-namespace openTRANS {
-    public class FTemplate {
+namespace openTRANS
+{
+    public class FTemplate
+    {
         [XmlElement("FT_ID", Namespace = Common.Namespace.bmecat)]
         public string FTId;
 

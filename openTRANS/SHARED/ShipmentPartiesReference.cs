@@ -1,7 +1,8 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class ShipmentPartiesReference
     {
         [XmlElement("DELIVERY_IDREF")]

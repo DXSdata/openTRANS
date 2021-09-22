@@ -1,8 +1,10 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public partial class OrderPartiesReference {
+namespace openTRANS
+{
+    public partial class OrderPartiesReference
+    {
         [XmlElement("BUYER_IDREF", Namespace = Namespace.bmecat, IsNullable = false)]
         public TypedItem BuyerIdRef = new TypedItem();
 

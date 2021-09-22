@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class AllowOrChargesFix
     {
         [XmlElement("ALLOW_OR_CHARGE")]

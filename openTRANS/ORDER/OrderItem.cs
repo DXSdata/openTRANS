@@ -2,7 +2,8 @@
 using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class OrderItem
     {
         [XmlElement("LINE_ITEM_ID")]

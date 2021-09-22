@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public partial class OrderResponseInfo {
+namespace openTRANS
+{
+    public partial class OrderResponseInfo
+    {
         [XmlElement("ORDER_ID")]
         public string OrderId;
 

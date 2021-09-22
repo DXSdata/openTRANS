@@ -2,8 +2,10 @@
 using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public partial class ContactDetails {
+namespace openTRANS
+{
+    public partial class ContactDetails
+    {
         [XmlElement("CONTACT_ID", Namespace = Namespace.bmecat, IsNullable = false)]
         public string ContactId = null;
 

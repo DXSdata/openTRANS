@@ -1,4 +1,6 @@
-﻿namespace openTRANS {
-    public class Components {
+﻿namespace openTRANS
+{
+    public class Components
+    {
     }
 }

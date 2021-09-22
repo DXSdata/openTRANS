@@ -1,12 +1,13 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class Party
     {
         [XmlElement("PARTY_ID", Namespace = Namespace.bmecat)]
         public TypedItem PartyId = new TypedItem();
-                
+
         [XmlElement("PARTY_ROLE", IsNullable = false)]
         public string PartyRole = null;
 
@@ -14,7 +15,7 @@ namespace openTRANS {
         public Address Address = null;
 
         [XmlElement("ACCOUNT", IsNullable = false)]
-        public Account Account =null;
+        public Account Account = null;
 
         [XmlElement("MIME_INFO", IsNullable = false)]
         public MimeInfo MimeInfo = null;

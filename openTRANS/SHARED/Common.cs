@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace openTRANS {
-    public static class Common {
+namespace openTRANS
+{
+    public static class Common
+    {
         public static class OrderType
         {
             public const string Standard = "standard";
@@ -13,7 +15,8 @@ namespace openTRANS {
             public const string Release = "release";
             public const string Consignment = "consignment";
         }
-        public static class Namespace {
+        public static class Namespace
+        {
             public const string xsi = "http://www.w3.org/2001/XMLSchema-instance";
             public const string bmecat = "http://www.bmecat.org/bmecat/2005";
             public const string xmime = "http://www.w3.org/2005/05/xmlmime";
@@ -22,7 +25,8 @@ namespace openTRANS {
             public const string custom = "custom";
         }
 
-        public static class PartyType {
+        public static class PartyType
+        {
             public const string BuyerSpecific = "buyer_specific";
             public const string CustomerSpecific = "customer_specific,";
             public const string DUNS = "duns";
@@ -37,7 +41,8 @@ namespace openTRANS {
             public const string ERPlusSpecific = "erplus_specific";
         }
 
-        public static class PartyRole {
+        public static class PartyRole
+        {
             public const string Buyer = "buyer";
             public const string CentralRegulator = "central_regulator";
             public const string Customer = "customer";
@@ -59,7 +64,8 @@ namespace openTRANS {
             public const string Other = "other";
         }
 
-        public static class OrderUnit {
+        public static class OrderUnit
+        {
             public const string Centimeter = "CMT";
             public const string Piece = "C62";
             public const string Kilogram = "KGM";
@@ -76,7 +82,8 @@ namespace openTRANS {
             public const string Surcharge = "surcharge";
         }
 
-        public static class AllowOrChargeTypeType {
+        public static class AllowOrChargeTypeType
+        {
             public const string ProjectBonus = "project_bonus";
             public const string OverPackaging = "overpackaging";
             public const string Rebate = "rebate";
@@ -86,25 +93,29 @@ namespace openTRANS {
             public const string Toll = "toll";
         }
 
-        public static class PhoneType {
+        public static class PhoneType
+        {
             public const string Mobile = "mobile";
             public const string Office = "office";
             public const string Private = "private";
         }
 
-        public static class DeliveryDateType {
+        public static class DeliveryDateType
+        {
             public const string Optional = "optional";
             public const string Fixed = "fixed";
         }
 
-        public static class PriceFlagType {
+        public static class PriceFlagType
+        {
             public const string InclDuty = "incl_duty";
             public const string InclFreight = "incl_freight";
             public const string InclInsurance = "incl_insurance";
             public const string InclPacking = "incl_packing";
         }
 
-        public static class TaxCategory {
+        public static class TaxCategory
+        {
             public const string Exemption = "exemption";
             public const string ParkingRate = "parking_rate";
             public const string ReducedRate = "reduced_rate";
@@ -113,11 +124,13 @@ namespace openTRANS {
             public const string ZeroRate = "zero_rate";
         }
 
-        public class TypedItem {
+        public class TypedItem
+        {
             public TypedItem() //needed for serializer
             {
             }
-            public TypedItem(string value = null, string type = null) {
+            public TypedItem(string value = null, string type = null)
+            {
                 Value = value;
                 Type = type;
             }
@@ -129,17 +142,20 @@ namespace openTRANS {
             public string Type;
         }
 
-        public class TypedLangItem : TypedItem {
+        public class TypedLangItem : TypedItem
+        {
             public TypedLangItem() { }
             public TypedLangItem(string value = null, string type = null, string lang = null)
-                : base(value, type) {
+                : base(value, type)
+            {
                 Lang = lang;
             }
             [XmlAttribute("lang")]
             public string Lang;
         }
 
-        public static class MimeTypeType {
+        public static class MimeTypeType
+        {
             public const string PDF = "application/pdf";
             public const string XML = "application/xml";
             public const string GIF = "image/gif";
@@ -149,11 +165,14 @@ namespace openTRANS {
             public const string URL = "url";
         }
 
-        public class Interval {
-            public Interval() {
+        public class Interval
+        {
+            public Interval()
+            {
 
             }
-            public Interval(decimal value = 0, string intervalType = null) {
+            public Interval(decimal value = 0, string intervalType = null)
+            {
                 IntervalType = intervalType;
                 Value = value;
             }
@@ -164,12 +183,14 @@ namespace openTRANS {
             public decimal Value;
         }
 
-        public class IntervalType {
+        public class IntervalType
+        {
             public const string Exclude = "exclude";
             public const string Include = "include";
         }
 
-        public static class MimePurposeType {
+        public static class MimePurposeType
+        {
             public const string Conformity = "conformity";
             public const string DataSheet = "data_sheet";
             public const string Detail = "detail";
@@ -194,7 +215,8 @@ namespace openTRANS {
 
         }
 
-        public class FileHashType {
+        public class FileHashType
+        {
             public const string SHA512 = "SHA512";
             public const string SHA384 = "SHA384";
             public const string SHA256 = "SHA256";
@@ -215,13 +237,15 @@ namespace openTRANS {
             public const string Custom = "";
         }
 
-        public class FValueType {
+        public class FValueType
+        {
             public const string Choice = "choice";
             public const string Range = "range";
             public const string Set = "set";
         }
 
-        public class FTFacetType {
+        public class FTFacetType
+        {
             public const string MinLength = "minLength";
             public const string MaxLength = "maxLength";
             public const string MinInclusive = "minInclusive";
@@ -233,11 +257,13 @@ namespace openTRANS {
         }
 
 
-        public static void Add(this List<TypedItem> list, string value = null, string type = null) {
+        public static void Add(this List<TypedItem> list, string value = null, string type = null)
+        {
             list.Add(new TypedItem(value, type));
         }
 
-        public static string GetCountryCode(string countryName) {
+        public static string GetCountryCode(string countryName)
+        {
             var country = Country.List.FirstOrDefault(c => c.Name == countryName);
 
             return country?.ThreeLetterCode;

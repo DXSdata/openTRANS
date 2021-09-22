@@ -1,7 +1,9 @@
 ﻿using System.Xml.Serialization;
 
-namespace openTRANS {
-    public class FTValue {
+namespace openTRANS
+{
+    public class FTValue
+    {
         [XmlElement("VALUE_IDREF", Namespace = Common.Namespace.bmecat)]
         public string ValueIdRef;
 

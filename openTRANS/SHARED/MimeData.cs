@@ -1,7 +1,9 @@
 ﻿using System.Xml.Serialization;
 
-namespace openTRANS {
-    public class MimeData {
+namespace openTRANS
+{
+    public class MimeData
+    {
         [XmlText]
         public string Base64;
 

@@ -2,8 +2,10 @@
 using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public partial class OrderResponseItem {
+namespace openTRANS
+{
+    public partial class OrderResponseItem
+    {
         [XmlElement("LINE_ITEM_ID")]
         public string LineItemId;
 

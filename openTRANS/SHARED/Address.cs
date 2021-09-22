@@ -1,7 +1,8 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class Address
     {
         [XmlElement("NAME", Namespace = Namespace.bmecat, IsNullable = false)]
@@ -53,18 +54,18 @@ namespace openTRANS {
         public TypedItem Phone = null;
 
         [XmlElement("FAX", Namespace = Namespace.bmecat, IsNullable = false)]
-        public TypedItem Fax=null;
+        public TypedItem Fax = null;
 
         [XmlElement("EMAIL", Namespace = Namespace.bmecat, IsNullable = false)]
-        public string Email=null;
+        public string Email = null;
 
         [XmlElement("PUBLIC_KEY", Namespace = Namespace.bmecat, IsNullable = false)]
         public TypedItem PublicKey = null;
 
         [XmlElement("URL", Namespace = Namespace.bmecat, IsNullable = false)]
-        public string Url=null;
+        public string Url = null;
 
         [XmlElement("ADDRESS_REMARKS", Namespace = Namespace.bmecat, IsNullable = false)]
-        public string AddressRemarks=null;
+        public string AddressRemarks = null;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Xml.Serialization;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class AllowOrChargeValue
     {
         [XmlElement("AOC_PERCENTAGE_FACTOR")]

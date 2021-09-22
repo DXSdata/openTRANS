@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace openTRANS {
-    public partial class Feature {
+namespace openTRANS
+{
+    public partial class Feature
+    {
         [XmlElement("FNAME", Namespace = Common.Namespace.bmecat)]
         public string FName;
 

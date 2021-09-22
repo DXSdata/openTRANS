@@ -1,7 +1,9 @@
 ﻿using System.Xml.Serialization;
 
-namespace openTRANS {
-    public partial class OrderResponseHeader {
+namespace openTRANS
+{
+    public partial class OrderResponseHeader
+    {
         [XmlElement("CONTROL_INFO")]
         public ControlInfo ControlInfo;
 

@@ -1,8 +1,10 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public class ProductComponent {
+namespace openTRANS
+{
+    public class ProductComponent
+    {
         [XmlElement("PRODUCT_ID")]
         public ProductId ProductId = new ProductId();
 

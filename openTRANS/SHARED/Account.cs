@@ -1,8 +1,10 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public class Account {
+namespace openTRANS
+{
+    public class Account
+    {
         [XmlElement("HOLDER")]
         public string Holder;
 

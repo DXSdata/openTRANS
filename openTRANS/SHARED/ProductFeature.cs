@@ -2,8 +2,10 @@
 using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public class ProductFeatures {
+namespace openTRANS
+{
+    public class ProductFeatures
+    {
         [XmlElement("REFERENCE_FEATURE_SYSTEM_NAME", Namespace = Namespace.bmecat)]
         public string ReferenceFeatureSystemName;
 

@@ -1,8 +1,10 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public class ValueRange {
+namespace openTRANS
+{
+    public class ValueRange
+    {
         [XmlElement("STARTVALUE", Namespace = Namespace.bmecat)]
         public Interval StartValue = new Interval();
 

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
-using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace openTRANS
@@ -14,7 +11,7 @@ namespace openTRANS
         //private readonly bool standalone = true;
 
         //private readonly XNamespace xsi = "http://www.w3.org/2001/XMLSchema-instance";
-        
+
         private readonly Order order;
 
         public XmlCreator(Order order) => this.order = order;
@@ -27,7 +24,7 @@ namespace openTRANS
                 //    new XDeclaration(xmlVersion, encoding.WebName, standalone ? "yes" : "no")
                 //    );
 
-               
+
                 var xmlns = new XmlSerializerNamespaces();
                 xmlns.Add(nameof(Common.Namespace.xsi), Common.Namespace.xsi);
                 xmlns.Add(nameof(Common.Namespace.bmecat), Common.Namespace.bmecat);
@@ -40,7 +37,7 @@ namespace openTRANS
                 {
                     serializer.Serialize(writer, order, xmlns);
                     return writer.ToString();
-                }                               
+                }
             }
         }
 

@@ -1,8 +1,10 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public class Mime {
+namespace openTRANS
+{
+    public class Mime
+    {
         [XmlElement("MIME_TYPE", Namespace = Namespace.bmecat, IsNullable = false)]
         public string MimeType = null;
 

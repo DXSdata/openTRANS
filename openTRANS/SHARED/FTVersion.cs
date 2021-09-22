@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace openTRANS {
-    public class FTVersion {
+namespace openTRANS
+{
+    public class FTVersion
+    {
         [XmlElement("VERSION", Namespace = Common.Namespace.bmecat)]
         public string Version;
 

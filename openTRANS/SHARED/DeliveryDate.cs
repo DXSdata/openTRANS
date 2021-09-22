@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class DeliveryDate
     {
         [XmlAttribute("type")]

@@ -1,7 +1,9 @@
 ﻿using System.Xml.Serialization;
 
-namespace openTRANS {
-    public class FeatureContent {
+namespace openTRANS
+{
+    public class FeatureContent
+    {
         [XmlElement("FT_DATATYPE", Namespace = Common.Namespace.bmecat, IsNullable = false)]
         public string FTDataType;
 
@@ -30,10 +32,10 @@ namespace openTRANS {
         public string FTSymbol = null;
 
         [XmlElement("FT_SYNONYMS", Namespace = Common.Namespace.bmecat, IsNullable = false)]
-        public FTSynonyms FTSynonyms  = null;
+        public FTSynonyms FTSynonyms = null;
 
         [XmlElement("MIME_INFO", Namespace = Common.Namespace.bmecat, IsNullable = false)]
-        public MimeInfo MimeInfo  = null;
+        public MimeInfo MimeInfo = null;
 
         [XmlElement("FT_SOURCE", Namespace = Common.Namespace.bmecat, IsNullable = false)]
         public FTSource FTSource = null;

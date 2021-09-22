@@ -1,12 +1,16 @@
 ﻿using System.Linq;
 using System.Xml.Serialization;
 
-namespace openTRANS {
-    public partial class OrderResponseSummary {
-        public OrderResponseSummary() {
+namespace openTRANS
+{
+    public partial class OrderResponseSummary
+    {
+        public OrderResponseSummary()
+        {
 
         }
-        public OrderResponseSummary(OrderResponse or) {
+        public OrderResponseSummary(OrderResponse or)
+        {
             TotalItemNum = or.OrderResponseItemList.Count;
             TotalAmount = or.OrderResponseItemList.Sum(item => item.PriceLineAmount);
         }

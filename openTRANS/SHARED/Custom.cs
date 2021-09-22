@@ -1,6 +1,4 @@
-﻿using System.Xml.Serialization;
-
-namespace openTRANS
+﻿namespace openTRANS
 {
     /// <summary>
     /// Some custom additions which do not belong to the original definitions, but were requested by several people
@@ -16,7 +14,7 @@ namespace openTRANS
     public static partial class OpenTransRemark
     {
         public const string NotesForSupplier = "NotesForSupplier";
-     
+
         /// <summary>
         /// Similar to CustomerOrderReference.OrderId
         /// </summary>

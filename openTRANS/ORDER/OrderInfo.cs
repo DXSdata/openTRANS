@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class OrderInfo
     {
         [XmlElement("ORDER_ID")]
@@ -18,7 +19,7 @@ namespace openTRANS {
         [XmlArray("PARTIES")]
         [XmlArrayItem("PARTY")]
         public List<Party> Parties = new List<Party>();
-        
+
         [XmlElement("ORDER_PARTIES_REFERENCE")]
         public OrderPartiesReference OrderPartiesReference = new OrderPartiesReference();
 

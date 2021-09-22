@@ -1,8 +1,10 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
-    public class FTSource {
+namespace openTRANS
+{
+    public class FTSource
+    {
         [XmlElement("SOURCE_NAME", Namespace = Namespace.bmecat)]
         public string SourceName;
 

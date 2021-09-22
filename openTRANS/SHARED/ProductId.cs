@@ -1,7 +1,8 @@
 ﻿using System.Xml.Serialization;
 using static openTRANS.Common;
 
-namespace openTRANS {
+namespace openTRANS
+{
     public partial class ProductId
     {
         [XmlElement("SUPPLIER_PID", Namespace = Common.Namespace.bmecat)]
@@ -15,6 +16,6 @@ namespace openTRANS {
 
         [XmlElement("DESCRIPTION_LONG", Namespace = Common.Namespace.bmecat)]
         public string DescriptionLong;
-                
+
     }
 }
