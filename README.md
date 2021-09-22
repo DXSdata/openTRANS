@@ -99,9 +99,14 @@ oi.ProductPriceFix.PriceAmount = 14;
 //oi.ProductPriceFix.AllowOrChargesFix.AllowOrCharge.Type = AllowOrChargeTypes.Allowance;
 
 o.OrderItemList.Add(oi);
+
+
+textBox1.Text = Xml.Serialize<Order>(o);
 }
 
-var ot = new XmlCreator(o).Result;
+private void textBox2_TextChanged(object sender, EventArgs e) {
+    OrderResponse response = Xml.Deserialize<OrderResponse>(textBox2.Text);
+}
 ```
 
 # Links
