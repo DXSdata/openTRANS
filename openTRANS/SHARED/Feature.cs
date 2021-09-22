@@ -15,7 +15,7 @@ namespace openTRANS
         public FTemplate FTemplate;
 
         [XmlElement("FVALUE", Namespace = Common.Namespace.bmecat)]
-        public List<string> FValue;
+        public List<string> FValue = new List<string>();
 
         [XmlElement("VALUE_IDREF", Namespace = Common.Namespace.bmecat)]
         public List<string> ValueIdRef;
