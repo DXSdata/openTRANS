@@ -19,7 +19,7 @@ namespace openTRANS
         public ProductComponents ProductComponents = new ProductComponents();
 
         [XmlElement("QUANTITY")]
-        public int Quantity;
+        public decimal Quantity;
 
         [XmlElement("ORDER_UNIT", Namespace = Common.Namespace.bmecat)]
         public string OrderUnit;
