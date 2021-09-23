@@ -23,7 +23,7 @@ namespace openTRANS {
             xmlns.Add(nameof(Common.Namespace.xsig), Common.Namespace.xsi);
 
 
-            XmlSerializer serializer = new XmlSerializer(typeof(o));
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
             using (var writer = new UTF8StringWriter()) {
                 serializer.Serialize(writer, o, xmlns);
                 return writer.ToString();
