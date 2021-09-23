@@ -11,7 +11,7 @@ namespace openTRANS {
         public string xsiSchemaLocation = "http://www.opentrans.org/XMLSchema/2.1%20opentrans_2_1.xsd";
 
         [XmlAttribute("version")]
-        public string Version { get; set; } = "2.1";
+        public const string Version = "2.1";
 
         [XmlElement("QUOTATION_HEADER")]
         public QuotationHeader QuotationHeader { get; set; } = new QuotationHeader();
