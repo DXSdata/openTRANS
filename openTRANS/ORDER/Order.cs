@@ -12,7 +12,7 @@ namespace openTRANS
         public string xsiSchemaLocation = "http://www.opentrans.org/XMLSchema/2.1%20opentrans_2_1.xsd";
 
         [XmlAttribute("version")]
-        public string Version = "2.1";
+        public const string Version = "2.1";
 
         [XmlAttribute("type")]
         public string Type = OrderType.Standard;

@@ -1,36 +1,38 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>DXSdata</Authors>
-    <Company>DXSdata GmbH</Company>
-    <Description>.NET Core / Standard implementation of the openTRANS v2.1 definitions by Fraunhofer IAO</Description>
-    <Version>1.1.0</Version>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>DXSdata</Authors>
+		<Company>DXSdata GmbH</Company>
+		<Description>.NET Core / Standard implementation of the openTRANS v2.1 definitions by Fraunhofer IAO</Description>
+		<Version>1.1.0</Version>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="ISO3166" Version="1.0.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="ISO3166" Version="1.0.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="INVOICE\" />
-    <Folder Include="DISPATCHNOTIFICATION\" />
-    <Folder Include="QUOTATION\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="INVOICE\" />
+		<Folder Include="DISPATCHNOTIFICATION\" />
+		<Folder Include="QUOTATION\" />
+		<Folder Include="INVOICE\" />
+		<Folder Include="DISPATCHNOTIFICATION\" />
+	</ItemGroup>
 
-  <!-- ignore some useless CS warnings -->
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;1591,1573</NoWarn>
-  </PropertyGroup>
+	<!-- ignore some useless CS warnings -->
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>1701;1702;1591,1573</NoWarn>
+	</PropertyGroup>
 
 
-  <!-- Summary comments in NuGet packages / builds -->
-  <PropertyGroup>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageProjectUrl>https://www.dxsdata.com/2019/08/opentrans-for-net-core/</PackageProjectUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/DXSdata/openTRANS</RepositoryUrl>
-  </PropertyGroup>
+	<!-- Summary comments in NuGet packages / builds -->
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageProjectUrl>https://www.dxsdata.com/2019/08/opentrans-for-net-core/</PackageProjectUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/DXSdata/openTRANS</RepositoryUrl>
+	</PropertyGroup>
 
 </Project>

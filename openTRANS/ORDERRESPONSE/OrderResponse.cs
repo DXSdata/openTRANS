@@ -7,7 +7,7 @@ namespace openTRANS
     public partial class OrderResponse
     {
         [XmlAttribute("version")]
-        public string Version = "2.1";
+        public const string Version = "2.1";
 
         [XmlElement("ORDERRESPONSE_HEADER")]
         public OrderResponseHeader OrderResponseHeader = new OrderResponseHeader();
