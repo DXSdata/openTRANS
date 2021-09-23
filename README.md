@@ -104,9 +104,7 @@ o.OrderItemList.Add(oi);
 textBox1.Text = Xml.Serialize<Order>(o);
 }
 
-private void textBox2_TextChanged(object sender, EventArgs e) {
-    OrderResponse response = Xml.Deserialize<OrderResponse>(textBox2.Text);
-}
+OrderResponse response = Xml.Deserialize<OrderResponse>(textBox2.Text);
 ```
 
 # Links
