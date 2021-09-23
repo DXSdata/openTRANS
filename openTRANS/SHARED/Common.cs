@@ -124,6 +124,35 @@ namespace openTRANS
             public const string ZeroRate = "zero_rate";
         }
 
+        public static class InternationalRestrictions {
+            public const string EUEmbargo = "eu-embargo";
+            public const string National = "national";
+            public const string UNEmbargo = "un-embargo";
+            public const string USEmbargo = "us-embargo";
+            public const string WTOEmbargo = "wto-embargo";
+            public const string Sonstige = "other";
+            public const string Custom = "";
+        }
+
+        public static class Currencies {
+            public const string EUR = "EUR";
+            public const string USD = "USD";
+        }
+
+        public static class CardType {
+            public const string MasterCard = "MasterCard";
+            public const string VISA = "VISA";
+            public const string AmericanExpress = "AmericanExpress";
+            public const string DinersClub = "DinersClub";
+            public const string JCB = "JCB";
+            public const string Maestro = "Maestro";
+            public const string DiscoverCard = "DiscoverCard";
+            public const string Transcard = "Transcard";
+            public const string DinaCard = "DinaCard";
+            public const string ChinaUnionPay = "ChinaUnionPay";
+            public const string Custom = "";
+        }
+
         public class TypedItem
         {
             public TypedItem() //needed for serializer
