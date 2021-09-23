@@ -101,7 +101,7 @@ oi.ProductPriceFix.PriceAmount = 14;
 o.OrderItemList.Add(oi);
 
 
-textBox1.Text = Xml.Serialize<Order>(o);
+string xml = Xml.Serialize<Order>(o);
 }
 
 OrderResponse response = Xml.Deserialize<OrderResponse>(textBox2.Text);
