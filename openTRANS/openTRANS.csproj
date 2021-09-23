@@ -17,6 +17,8 @@
 		<Folder Include="INVOICE\" />
 		<Folder Include="DISPATCHNOTIFICATION\" />
 		<Folder Include="QUOTATION\" />
+		<Folder Include="INVOICE\" />
+		<Folder Include="DISPATCHNOTIFICATION\" />
 	</ItemGroup>
 
 	<!-- ignore some useless CS warnings -->
