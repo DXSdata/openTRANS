@@ -5,7 +5,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace openTRANS {
-    [XmlRoot("QUOTATION", Namespace = "http://www.opentrans.org/XMLSchema/2.1", IsNullable = false))]
+    [XmlRoot("QUOTATION", Namespace = "http://www.opentrans.org/XMLSchema/2.1", IsNullable = false)]
     public partial class Quotation {
         [XmlAttribute("schemaLocation", Namespace = XmlSchema.InstanceNamespace)]
         public string xsiSchemaLocation = "http://www.opentrans.org/XMLSchema/2.1%20opentrans_2_1.xsd";
