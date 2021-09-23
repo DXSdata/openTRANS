@@ -10,7 +10,7 @@ namespace openTRANS {
         [XmlAttribute("schemaLocation", Namespace = XmlSchema.InstanceNamespace)]
         public string xsiSchemaLocation = "http://www.opentrans.org/XMLSchema/2.1%20opentrans_2_1.xsd";
 
-        [XmlElement("version")]
+        [XmlAttribute("version")]
         public string Version { get; set; } = "2.1";
 
         [XmlElement("QUOTATION_HEADER")]
