@@ -124,6 +124,58 @@ namespace openTRANS
             public const string ZeroRate = "zero_rate";
         }
 
+        public static class AdjustmentReasonCodes {
+            public const string Handelsrabatt = "19";
+        }
+        public static class InvoiceItemType {
+            public const string OrderItem = "order_item";
+            public const string ExtraItem = "extra_item";
+            public const string PledgeItem = "pledge_item";
+        }
+        public static class InvoiceType {
+            public const string AdviceOfamendment = "advice_of_amendment";
+            public const string CreditInfo = "credit_memo";
+            public const string Invoice = "invoice";
+            public const string InvoiceCopy = "invoice_copy";
+        }
+
+        public static class InvoiceReferenceType {
+            public const string Invoice = "invoice";
+            public const string InvoiceList = "invloicelist";
+            public const string CreditMemo = "credit_memo";
+        }
+
+        public static class InvoiceCoverageType {
+            public const string Single = "single";
+            public const string Collective = "collective";
+        }
+
+        public static class MeansOfTransportType {
+            public const string Air = "air";
+            public const string Maritime = "maritime";
+            public const string Multimodal = "multimodal";
+            public const string Rail = "rail";
+            public const string Road = "road";
+            public const string Custom = "";
+        }
+
+        public static class CostCategoryIdType {
+            public const string CostCenter = "cost_center";
+            public const string Project = "project";
+            public const string WorkOrder = "work_order";
+
+        }
+
+        public static class PackageType {
+            public const string BuyerSpecific = "buyer_specific";
+            public const string DelivererSpecific = "deliverer_specific";
+            public const string Grai = "grai";
+            public const string Mtv = "mtv";
+            public const string Nve = "nve";
+            public const string Sscc = "sscc";
+            public const string Custom = "";
+        }
+
         public class TypedItem
         {
             public TypedItem() //needed for serializer
