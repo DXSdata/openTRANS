@@ -104,7 +104,7 @@ o.OrderItemList.Add(oi);
 string xml = Xml.Serialize<Order>(o);
 }
 
-OrderResponse response = Xml.Deserialize<OrderResponse>(textBox2.Text);
+OrderResponse response = Xml.Deserialize<OrderResponse>(serializedXmlData);
 ```
 
 # Links
