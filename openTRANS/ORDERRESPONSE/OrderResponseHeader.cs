@@ -2,12 +2,12 @@
 
 namespace openTRANS
 {
-    public partial class OrderResponseHeader
+    public partial class OrderresponseHeader
     {
         [XmlElement("CONTROL_INFO")]
         public ControlInfo ControlInfo;
 
         [XmlElement("ORDERRESPONSE_INFO")]
-        public OrderResponseInfo OrderResponseInfo = new OrderResponseInfo();
+        public OrderresponseInfo OrderresponseInfo = new OrderresponseInfo();
     }
 }

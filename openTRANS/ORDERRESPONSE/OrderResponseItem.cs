@@ -4,7 +4,7 @@ using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public partial class OrderResponseItem
+    public partial class OrderresponseItem
     {
         [XmlElement("LINE_ITEM_ID")]
         public string LineItemId;

@@ -3,16 +3,16 @@ using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public partial class OrderResponseSummary
+    public partial class OrderresponseSummary
     {
-        public OrderResponseSummary()
+        public OrderresponseSummary()
         {
 
         }
-        public OrderResponseSummary(OrderResponse or)
+        public OrderresponseSummary(Orderresponse or)
         {
-            TotalItemNum = or.OrderResponseItemList.Count;
-            TotalAmount = or.OrderResponseItemList.Sum(item => item.PriceLineAmount);
+            TotalItemNum = or.OrderresponseItemList.Count;
+            TotalAmount = or.OrderresponseItemList.Sum(item => item.PriceLineAmount);
         }
 
         [XmlElement("TOTAL_ITEM_NUM")]
