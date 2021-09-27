@@ -14,16 +14,16 @@ namespace openTRANS
         }
 
 
-        public OrderResponse Result
+        public Orderresponse Result
         {
             get
             {
-                var serializer = new XmlSerializer(typeof(OrderResponse));
-                OrderResponse orderResponse;
+                var serializer = new XmlSerializer(typeof(Orderresponse));
+                Orderresponse orderResponse;
 
                 using (TextReader reader = new StringReader(this.orderResponse))
                 {
-                    orderResponse = (OrderResponse)serializer.Deserialize(reader);
+                    orderResponse = (Orderresponse)serializer.Deserialize(reader);
                 }
                 return orderResponse;
             }

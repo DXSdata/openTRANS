@@ -5,13 +5,13 @@ using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public partial class OrderResponseInfo
+    public partial class OrderresponseInfo
     {
         [XmlElement("ORDER_ID")]
         public string OrderId;
 
         [XmlElement("ORDERRESPONSE_DATE")]
-        public DateTime OrderResponseDate;
+        public DateTime OrderresponseDate;
 
         [XmlElement("ORDER_DATE")]
         public DateTime OrderDate;

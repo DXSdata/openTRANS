@@ -142,7 +142,7 @@ namespace testform
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) {
-            OrderResponse response = new XmlReader(textBox2.Text).Result;
+            Orderresponse response = new XmlReader(textBox2.Text).Result;
         }
     }
 }
