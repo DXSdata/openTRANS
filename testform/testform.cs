@@ -137,12 +137,11 @@ namespace testform
                 o.OrderItemList.Add(oi);
             }
 
-            var ot = new XmlCreator(o);
-            textBox1.Text = ot.Result;
+            textBox1.Text = Xml.Serialize(o);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) {
-            OrderResponse response = new XmlReader(textBox2.Text).Result;
+            OrderResponse response = Xml.Deserialize<OrderResponse>(textBox2.Text);
         }
     }
 }
