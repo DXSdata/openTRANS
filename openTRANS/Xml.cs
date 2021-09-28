@@ -4,17 +4,10 @@ using System.Xml.Serialization;
 
 namespace openTRANS {
     public static class Xml {
-        //private readonly string xmlVersion = "1.0";
-        //private readonly Encoding encoding = new UpperCaseUTF8Encoding(); //Previously Encoding.Utf8; in case of changing also change StringWriter below; would otherwise produce wrong xml encoding attribute
-        //private readonly bool standalone = true;
-
-        //private readonly XNamespace xsi = "http://www.w3.org/2001/XMLSchema-instance";
-
-
         static Xml() {
         }
 
-        public static string Serialize<T>(T o) where T : class, new() {
+        public static string Serialize<T>(T o) where T : class, IOpenTransBase {
 
             var xmlns = new XmlSerializerNamespaces();
             xmlns.Add(nameof(Common.Namespace.xsi), Common.Namespace.xsi);
@@ -30,7 +23,7 @@ namespace openTRANS {
             }
         }
 
-        public static T Deserialize<T>(string xml) where T : class, new() {
+        public static T Deserialize<T>(string xml) where T : class, IOpenTransBase {
             var serializer = new XmlSerializer(typeof(T));
 
             using (TextReader reader = new StringReader(xml)) {
