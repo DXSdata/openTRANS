@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace openTRANS
@@ -6,8 +7,11 @@ namespace openTRANS
     [XmlRoot("ORDERRESPONSE", Namespace = "http://www.opentrans.org/XMLSchema/2.1", IsNullable = false)]
     public partial class OrderResponse
     {
+        [XmlAttribute("schemaLocation", Namespace = XmlSchema.InstanceNamespace)]
+        public string xsiSchemaLocation => "http://www.opentrans.org/XMLSchema/2.1%20opentrans_2_1.xsd";
+
         [XmlAttribute("version")]
-        public string Version = "2.1";
+        public string Version => "2.1";
 
         [XmlElement("ORDERRESPONSE_HEADER")]
         public OrderResponseHeader OrderResponseHeader = new OrderResponseHeader();
