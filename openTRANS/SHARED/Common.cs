@@ -1,21 +1,26 @@
 ﻿
 using ISO3166;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public static class Common
+    [Serializable]
+    public static partial class Common
     {
-        public static class OrderType
+        [Serializable]
+        public static partial class OrderType
         {
             public const string Standard = "standard";
             public const string Express = "express";
             public const string Release = "release";
             public const string Consignment = "consignment";
         }
-        public static class Namespace
+
+        [Serializable]
+        public static partial class Namespace
         {
             public const string xsi = "http://www.w3.org/2001/XMLSchema-instance";
             public const string bmecat = "http://www.bmecat.org/bmecat/2005";
@@ -25,7 +30,8 @@ namespace openTRANS
             public const string custom = "custom";
         }
 
-        public static class PartyType
+        [Serializable]
+        public static partial class PartyType
         {
             public const string BuyerSpecific = "buyer_specific";
             public const string CustomerSpecific = "customer_specific,";
@@ -41,7 +47,8 @@ namespace openTRANS
             public const string ERPlusSpecific = "erplus_specific";
         }
 
-        public static class PartyRole
+        [Serializable]
+        public static partial class PartyRole
         {
             public const string Buyer = "buyer";
             public const string CentralRegulator = "central_regulator";
@@ -64,7 +71,8 @@ namespace openTRANS
             public const string Other = "other";
         }
 
-        public static class OrderUnit
+        [Serializable]
+        public static partial class OrderUnit
         {   // to be extended; see e.g. https://www.mercateo.com/support/verkaufen/katalog_anforderungen/bestellangaben/abkuerzungen-bestelleinheiten/
             public const string Centimeter = "CMT";
             public const string Piece = "C62";
@@ -77,13 +85,15 @@ namespace openTRANS
             public const string Hour = "HUR";
         }
 
-        public static class AllowOrChargeTypes //exceptional plural to differ from AllowOrChargeType class
+        [Serializable]
+        public static partial class AllowOrChargeTypes //exceptional plural to differ from AllowOrChargeType class
         {
             public const string Allowance = "allowance";
             public const string Surcharge = "surcharge";
         }
 
-        public static class AllowOrChargeTypeType
+        [Serializable]
+        public static partial class AllowOrChargeTypeType
         {
             public const string ProjectBonus = "project_bonus";
             public const string OverPackaging = "overpackaging";
@@ -94,20 +104,23 @@ namespace openTRANS
             public const string Toll = "toll";
         }
 
-        public static class PhoneType
+        [Serializable]
+        public static partial class PhoneType
         {
             public const string Mobile = "mobile";
             public const string Office = "office";
             public const string Private = "private";
         }
 
-        public static class DeliveryDateType
+        [Serializable]
+        public static partial class DeliveryDateType
         {
             public const string Optional = "optional";
             public const string Fixed = "fixed";
         }
 
-        public static class PriceFlagType
+        [Serializable]
+        public static partial class PriceFlagType
         {
             public const string InclDuty = "incl_duty";
             public const string InclFreight = "incl_freight";
@@ -115,7 +128,8 @@ namespace openTRANS
             public const string InclPacking = "incl_packing";
         }
 
-        public static class TaxCategory
+        [Serializable]
+        public static partial class TaxCategory
         {
             public const string Exemption = "exemption";
             public const string ParkingRate = "parking_rate";
@@ -125,7 +139,8 @@ namespace openTRANS
             public const string ZeroRate = "zero_rate";
         }
 
-        public class TypedItem
+        [Serializable]
+        public partial class TypedItem
         {
             public TypedItem() //needed for serializer
             {
@@ -143,7 +158,8 @@ namespace openTRANS
             public string Type;
         }
 
-        public class TypedLangItem : TypedItem
+        [Serializable]
+        public partial class TypedLangItem : TypedItem
         {
             public TypedLangItem() { }
             public TypedLangItem(string value = null, string type = null, string lang = null)
@@ -155,7 +171,8 @@ namespace openTRANS
             public string Lang;
         }
 
-        public static class MimeTypeType
+        [Serializable]
+        public static partial class MimeTypeType
         {
             public const string PDF = "application/pdf";
             public const string XML = "application/xml";
@@ -166,11 +183,11 @@ namespace openTRANS
             public const string URL = "url";
         }
 
-        public class Interval
+        [Serializable]
+        public partial class Interval
         {
             public Interval()
             {
-
             }
             public Interval(decimal value = 0, string intervalType = null)
             {
@@ -184,13 +201,15 @@ namespace openTRANS
             public decimal Value;
         }
 
-        public class IntervalType
+        [Serializable]
+        public partial class IntervalType
         {
             public const string Exclude = "exclude";
             public const string Include = "include";
         }
 
-        public static class MimePurposeType
+        [Serializable]
+        public static partial class MimePurposeType
         {
             public const string Conformity = "conformity";
             public const string DataSheet = "data_sheet";
@@ -216,7 +235,8 @@ namespace openTRANS
 
         }
 
-        public class FileHashType
+        [Serializable]
+        public partial class FileHashType
         {
             public const string SHA512 = "SHA512";
             public const string SHA384 = "SHA384";
@@ -238,14 +258,16 @@ namespace openTRANS
             public const string Custom = "";
         }
 
-        public class FValueType
+        [Serializable]
+        public partial class FValueType
         {
             public const string Choice = "choice";
             public const string Range = "range";
             public const string Set = "set";
         }
 
-        public class FTFacetType
+        [Serializable]
+        public partial class FTFacetType
         {
             public const string MinLength = "minLength";
             public const string MaxLength = "maxLength";

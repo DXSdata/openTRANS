@@ -5,7 +5,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -139,10 +141,15 @@ namespace testform
 
             var ot = new XmlCreator(o);
             textBox1.Text = ot.Result;
+
+            //test creating a stream
+            var stream = new MemoryStream();
+            var formatter = new BinaryFormatter();
+            formatter.Serialize(stream, o);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) {
-            OrderResponse response = new XmlReader(textBox2.Text).Result;
+            var response = new XmlReader(textBox2.Text).Result;
         }
     }
 }
