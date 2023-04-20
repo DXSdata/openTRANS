@@ -1,8 +1,10 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class Address
     {
         [XmlElement("NAME", Namespace = Namespace.bmecat, IsNullable = false)]
@@ -18,7 +20,7 @@ namespace openTRANS
         public string Department = null;
 
         [XmlElement("CONTACT_DETAILS", IsNullable = false)]
-        public ContactDetails ContactDetails = new ContactDetails();
+        public ContactDetails ContactDetails = new ();
 
         [XmlElement("STREET", Namespace = Namespace.bmecat, IsNullable = false)]
         public string Street = null;

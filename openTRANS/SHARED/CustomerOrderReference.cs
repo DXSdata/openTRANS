@@ -4,6 +4,7 @@ using static openTRANS.Common;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class CustomerOrderReference
     {
         /// <summary>
@@ -22,6 +23,6 @@ namespace openTRANS
         public DateTime? OrderDate;
 
         [XmlElement("CUSTOMER_IDREF")]
-        public TypedItem CustomerIdRef = new TypedItem();
+        public TypedItem CustomerIdRef = new ();
     }
 }

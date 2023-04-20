@@ -5,6 +5,7 @@ using static openTRANS.Common;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class OrderInfo
     {
         [XmlElement("ORDER_ID")]
@@ -14,21 +15,21 @@ namespace openTRANS
         public DateTime OrderDate;
 
         [XmlElement("DELIVERY_DATE")]
-        public DeliveryDate DeliveryDate = new DeliveryDate();
+        public DeliveryDate DeliveryDate = new ();
 
         [XmlArray("PARTIES")]
         [XmlArrayItem("PARTY")]
         public List<Party> Parties = new List<Party>();
 
         [XmlElement("ORDER_PARTIES_REFERENCE")]
-        public OrderPartiesReference OrderPartiesReference = new OrderPartiesReference();
+        public OrderPartiesReference OrderPartiesReference = new ();
 
         [XmlElement("CUSTOMER_ORDER_REFERENCE")]
-        public CustomerOrderReference CustomerOrderReference = new CustomerOrderReference();
+        public CustomerOrderReference CustomerOrderReference = new ();
 
         //will be serialized as array without a "remarks" parent
         [XmlElement("REMARKS")]
-        public List<TypedItem> Remarks = new List<TypedItem>();
+        public List<TypedItem> Remarks = new ();
 
         [XmlElement("CURRENCY", Namespace = Namespace.bmecat)]
         public string Currency;

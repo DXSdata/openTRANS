@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class OrderResponseSummary
     {
         public OrderResponseSummary()
@@ -22,6 +24,6 @@ namespace openTRANS
         public decimal TotalAmount;
 
         [XmlElement("ALLOW_OR_CHARGES_FIX")]
-        public AllowOrChargesFix AllowOrChargesFix = new AllowOrChargesFix();
+        public AllowOrChargesFix AllowOrChargesFix = new ();
     }
 }

@@ -1,8 +1,10 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public class MimeData
+    [Serializable]
+    public partial class MimeData
     {
         [XmlText]
         public string Base64;

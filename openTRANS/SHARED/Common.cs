@@ -65,7 +65,7 @@ namespace openTRANS
         }
 
         public static class OrderUnit
-        {
+        {   // to be extended; see e.g. https://www.mercateo.com/support/verkaufen/katalog_anforderungen/bestellangaben/abkuerzungen-bestelleinheiten/
             public const string Centimeter = "CMT";
             public const string Piece = "C62";
             public const string Kilogram = "KGM";
@@ -74,6 +74,7 @@ namespace openTRANS
             public const string Meter = "MTR";
             public const string PackOf2 = "OP";
             public const string Packet = "PA";
+            public const string Hour = "HUR";
         }
 
         public static class AllowOrChargeTypes //exceptional plural to differ from AllowOrChargeType class
@@ -257,15 +258,11 @@ namespace openTRANS
         }
 
 
-        public static void Add(this List<TypedItem> list, string value = null, string type = null)
-        {
-            list.Add(new TypedItem(value, type));
-        }
+        public static void Add(this List<TypedItem> list, string value = null, string type = null) => list.Add(new TypedItem(value, type));
 
         public static string GetCountryCode(string countryName)
         {
             var country = Country.List.FirstOrDefault(c => c.Name == countryName);
-
             return country?.ThreeLetterCode;
         }
     }

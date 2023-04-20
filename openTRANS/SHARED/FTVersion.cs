@@ -3,7 +3,8 @@ using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public class FTVersion
+    [Serializable]
+    public partial class FTVersion
     {
         [XmlElement("VERSION", Namespace = Common.Namespace.bmecat)]
         public string Version;

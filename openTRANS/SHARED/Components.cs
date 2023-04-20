@@ -1,6 +1,9 @@
-﻿namespace openTRANS
+﻿using System;
+
+namespace openTRANS
 {
-    public class Components
+    [Serializable]
+    public partial class Components
     {
     }
 }

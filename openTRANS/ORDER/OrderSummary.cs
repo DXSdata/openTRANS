@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class OrderSummary
     {
         public OrderSummary()

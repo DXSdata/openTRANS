@@ -1,8 +1,10 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class ProductId
     {
         [XmlElement("SUPPLIER_PID", Namespace = Common.Namespace.bmecat)]

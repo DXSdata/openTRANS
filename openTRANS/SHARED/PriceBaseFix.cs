@@ -1,9 +1,11 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public class PriceBaseFix
+    [Serializable]
+    public partial class PriceBaseFix
     {
         [XmlElement("PRICE_UNIT_VALUE")]
         public float PriceUnitValue;

@@ -1,8 +1,10 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public class FeatureContent
+    [Serializable]
+    public partial class FeatureContent
     {
         [XmlElement("FT_DATATYPE", Namespace = Common.Namespace.bmecat, IsNullable = false)]
         public string FTDataType;

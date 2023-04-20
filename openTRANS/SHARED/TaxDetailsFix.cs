@@ -1,9 +1,11 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public class TaxDetailsFix
+    [Serializable]
+    public partial class TaxDetailsFix
     {
         [XmlElement("CALCULATION_SEQUENCE", Namespace = Namespace.bmecat)]
         public uint CalculationSequence;

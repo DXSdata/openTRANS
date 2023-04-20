@@ -1,7 +1,9 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class AllowOrChargeValue
     {
         [XmlElement("AOC_PERCENTAGE_FACTOR")]
@@ -11,7 +13,7 @@ namespace openTRANS
         public decimal AocMonetaryAmount;
 
         [XmlElement("AOC_ORDER_UNITS_COUNT")]
-        public AocOrderUnitsCount AocOrderUnitsCount = new AocOrderUnitsCount();
+        public AocOrderUnitsCount AocOrderUnitsCount = new ();
 
         [XmlElement("AOC_ADDITIONAL_ITEMS")]
         public string AocAdditionalItems;

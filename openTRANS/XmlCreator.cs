@@ -20,19 +20,13 @@ namespace openTRANS
         {
             get
             {
-                //var xdoc = new XDocument(
-                //    new XDeclaration(xmlVersion, encoding.WebName, standalone ? "yes" : "no")
-                //    );
-
-
                 var xmlns = new XmlSerializerNamespaces();
                 xmlns.Add(nameof(Common.Namespace.xsi), Common.Namespace.xsi);
                 xmlns.Add(nameof(Common.Namespace.bmecat), Common.Namespace.bmecat);
                 xmlns.Add(nameof(Common.Namespace.xmime), Common.Namespace.xmime);
                 xmlns.Add(nameof(Common.Namespace.xsig), Common.Namespace.xsi);
 
-
-                XmlSerializer serializer = new XmlSerializer(typeof(Order));
+                var serializer = new XmlSerializer(typeof(Order));
                 using (var writer = new UTF8StringWriter())
                 {
                     serializer.Serialize(writer, order, xmlns);
@@ -60,7 +54,6 @@ namespace openTRANS
         /// </summary>
         public class UpperCaseUTF8Encoding : UTF8Encoding
         {
-
             public override string WebName => base.WebName.ToUpper();
 
             public static UpperCaseUTF8Encoding UpperCaseUTF8

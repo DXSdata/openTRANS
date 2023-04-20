@@ -1,12 +1,14 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class Party
     {
         [XmlElement("PARTY_ID", Namespace = Namespace.bmecat)]
-        public TypedItem PartyId = new TypedItem();
+        public TypedItem PartyId = new ();
 
         [XmlElement("PARTY_ROLE", IsNullable = false)]
         public string PartyRole = null;

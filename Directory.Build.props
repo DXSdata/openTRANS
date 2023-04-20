@@ -1,0 +1,7 @@
+<!-- 2023-04 dxsdata; using >= C# 8.0 for netstandard2.0; remove file if defaults change in future -->
+<!-- https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version#configure-multiple-projects -->
+<Project>
+ <PropertyGroup>
+   <LangVersion>latest</LangVersion>
+ </PropertyGroup>
+</Project>

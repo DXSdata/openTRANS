@@ -1,14 +1,16 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public class MimeEmbedded
+    [Serializable]
+    public partial class MimeEmbedded
     {
         [XmlAttribute("lang")]
         public string Lang;
 
         [XmlElement("MIME_DATA", IsNullable = false)]
-        public MimeData MimeData = new MimeData();
+        public MimeData MimeData = new ();
 
         [XmlElement("FILE_NAME", IsNullable = false)]
         public string FileName = null;

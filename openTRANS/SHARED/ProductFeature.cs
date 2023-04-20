@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public class ProductFeatures
+    [Serializable]
+    public partial class ProductFeatures
     {
         [XmlElement("REFERENCE_FEATURE_SYSTEM_NAME", Namespace = Namespace.bmecat)]
         public string ReferenceFeatureSystemName;
@@ -22,6 +24,6 @@ namespace openTRANS
         public int GroupProductOrder;
 
         [XmlElement("FEATURE", Namespace = Namespace.bmecat)]
-        public List<Feature> Features = new List<Feature>();
+        public List<Feature> Features = new ();
     }
 }

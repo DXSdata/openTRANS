@@ -1,8 +1,10 @@
-﻿using static openTRANS.Common;
+﻿using System;
+using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public class FTFacets
+    [Serializable]
+    public partial class FTFacets
     {
         public TypedItem[] FTFacet = new TypedItem[4];
     }

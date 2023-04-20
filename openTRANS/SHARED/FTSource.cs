@@ -1,9 +1,11 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public class FTSource
+    [Serializable]
+    public partial class FTSource
     {
         [XmlElement("SOURCE_NAME", Namespace = Namespace.bmecat)]
         public string SourceName;
@@ -12,6 +14,6 @@ namespace openTRANS
         public string SourceUri;
 
         [XmlElement("PARTY_IDREF", Namespace = Namespace.bmecat)]
-        public TypedItem PartyIdRef = new TypedItem();
+        public TypedItem PartyIdRef = new ();
     }
 }

@@ -5,6 +5,7 @@ using static openTRANS.Common;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class OrderResponseInfo
     {
         [XmlElement("ORDER_ID")]
@@ -36,10 +37,10 @@ namespace openTRANS
 
         [XmlArray("PARTIES")]
         [XmlArrayItem("PARTY")]
-        public List<Party> Parties = new List<Party>();
+        public List<Party> Parties = new ();
 
         [XmlElement("ORDER_PARTIES_REFERENCE")]
-        public OrderPartiesReference OrderPartiesReference = new OrderPartiesReference();
+        public OrderPartiesReference OrderPartiesReference = new ();
 
         [XmlElement("DOCEXCHANGE_PARTIES_REFERENCE")]
         public DocExchangePartiesReference DocexchangePartiesReference;

@@ -1,7 +1,9 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class AllowOrCharge
     {
         [XmlAttribute("type")]
@@ -20,7 +22,7 @@ namespace openTRANS
         public string AllowOrChargeDescr;
 
         [XmlElement("ALLOW_OR_CHARGE_VALUE")]
-        public AllowOrChargeValue AllowOrChargeValue = new AllowOrChargeValue();
+        public AllowOrChargeValue AllowOrChargeValue = new ();
 
         [XmlElement("ALLOW_OR_CHARGE_BASE")]
         public float AllowOrChargeBase;

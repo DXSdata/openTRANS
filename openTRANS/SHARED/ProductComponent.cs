@@ -1,18 +1,20 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public class ProductComponent
+    [Serializable]
+    public partial class ProductComponent
     {
         [XmlElement("PRODUCT_ID")]
-        public ProductId ProductId = new ProductId();
+        public ProductId ProductId = new ();
 
         [XmlElement("PRODUCT_FEATURES")]
-        public ProductFeatures ProductFeatures = new ProductFeatures();
+        public ProductFeatures ProductFeatures = new ();
 
         [XmlElement("PRODUCT_COMPONENTS")]
-        public ProductComponents ProductComponents = new ProductComponents();
+        public ProductComponents ProductComponents = new ();
 
         [XmlElement("QUANTITY")]
         public decimal Quantity;
@@ -21,6 +23,6 @@ namespace openTRANS
         public string OrderUnit;
 
         [XmlElement("PRODUCT_PRICE_FIX")]
-        public ProductPriceFix ProductPriceFix = new ProductPriceFix();
+        public ProductPriceFix ProductPriceFix = new ();
     }
 }

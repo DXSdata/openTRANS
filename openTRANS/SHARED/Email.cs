@@ -1,9 +1,11 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public class Email
+    [Serializable]
+    public partial class Email
     {
         [XmlElement("EMAIL", Namespace = Namespace.bmecat)]
         public string EMail;

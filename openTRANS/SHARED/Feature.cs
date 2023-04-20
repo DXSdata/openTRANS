@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace openTRANS
 {
+    [Serializable]
     public partial class Feature
     {
         [XmlElement("FNAME", Namespace = Common.Namespace.bmecat)]

@@ -1,10 +1,12 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public class MimeInfo
+    [Serializable]
+    public partial class MimeInfo
     {
         [XmlElement("MIME")]
-        public Mime Mime = new Mime();
+        public Mime Mime = new ();
     }
 }

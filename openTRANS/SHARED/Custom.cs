@@ -1,4 +1,6 @@
-﻿namespace openTRANS
+﻿using System;
+
+namespace openTRANS
 {
     /// <summary>
     /// Some custom additions which do not belong to the original definitions, but were requested by several people
@@ -11,6 +13,7 @@
     /// <summary>
     /// Not in original definition, but often used
     /// </summary>
+    [Serializable]
     public static partial class OpenTransRemark
     {
         public const string NotesForSupplier = "NotesForSupplier";
@@ -28,6 +31,7 @@
     /// <summary>
     /// Not in original definition, but often used
     /// </summary>
+    [Serializable]
     public static partial class OpenTransFeature
     {
         public const string ColorCodeInside = "ColorCodeInside";

@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
+    [Serializable]
     [XmlRoot("ORDER", Namespace = "http://www.opentrans.org/XMLSchema/2.1", IsNullable = false)]
     public partial class Order
     {
@@ -18,19 +20,16 @@ namespace openTRANS
         public string Type = OrderType.Standard;
 
         [XmlElement("ORDER_HEADER")]
-        public OrderHeader OrderHeader = new OrderHeader();
+        public OrderHeader OrderHeader = new ();
 
         [XmlArray("ORDER_ITEM_LIST")]
         [XmlArrayItem("ORDER_ITEM")]
-        public List<OrderItem> OrderItemList = new List<OrderItem>();
+        public List<OrderItem> OrderItemList = new ();
 
         [XmlElement("ORDER_SUMMARY")]
         public OrderSummary OrderSummary
         {
-            get
-            {
-                return new OrderSummary(this);
-            }
+            get => new (this);
             set { /* required for xml serialization */ }
         }
     }

@@ -1,8 +1,10 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public class Authentification
+    [Serializable]
+    public partial class Authentification
     {
         [XmlElement("LOGIN", Namespace = Common.Namespace.bmecat)]
         public string Login;

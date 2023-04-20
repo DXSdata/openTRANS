@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ISO3166" Version="1.0.3" />
+    <PackageReference Include="ISO3166" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>

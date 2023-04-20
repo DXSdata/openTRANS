@@ -1,8 +1,10 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace openTRANS
 {
-    public class FTemplate
+    [Serializable]
+    public partial class FTemplate
     {
         [XmlElement("FT_ID", Namespace = Common.Namespace.bmecat)]
         public string FTId;
@@ -26,9 +28,9 @@ namespace openTRANS
         public string FTGroupName;
 
         [XmlElement("FT_DEPENDENCIES", Namespace = Common.Namespace.bmecat)]
-        public FTDependencies FTDependencies = new FTDependencies();
+        public FTDependencies FTDependencies = new ();
 
         [XmlElement("FEATURE_CONTENT", Namespace = Common.Namespace.bmecat)]
-        public FeatureContent FeatureContent = new FeatureContent();
+        public FeatureContent FeatureContent = new ();
     }
 }

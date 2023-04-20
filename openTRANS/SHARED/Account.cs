@@ -1,15 +1,17 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using static openTRANS.Common;
 
 namespace openTRANS
 {
-    public class Account
+    [Serializable]
+    public partial class Account
     {
         [XmlElement("HOLDER")]
         public string Holder;
 
         [XmlElement("BANK_ACCOUNT")]
-        public TypedItem BankAccount = new TypedItem();
+        public TypedItem BankAccount = new ();
 
         [XmlElement("BANK_CODE", IsNullable = false)]
         public TypedItem BankCode = null;
