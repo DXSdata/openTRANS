@@ -6,17 +6,11 @@
     <Authors>DXSdata</Authors>
     <Company>DXSdata GmbH</Company>
     <Description>.NET Core / Standard implementation of the openTRANS v2.1 definitions by Fraunhofer IAO</Description>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="ISO3166" Version="1.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="INVOICE\" />
-    <Folder Include="DISPATCHNOTIFICATION\" />
-    <Folder Include="QUOTATION\" />
   </ItemGroup>
 
   <!-- ignore some useless CS warnings -->

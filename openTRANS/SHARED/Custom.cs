@@ -39,6 +39,18 @@ namespace openTRANS
         public const string Length = "Length";
         public const string Width = "Width";
         public const string Height = "Height";
+        public const string Strength = "Strength";
         public const string MaterialGroup = "MaterialGroup";
+        
+        /// <summary>
+        /// Position number of the commission related to this item
+        /// </summary>
+        public const string CommissionPosition = "CommissionPosition";
+
+        /// <summary>
+        /// Optional notes for the supplier
+        /// </summary>
+        public const string Notes = "Notes";
+
     }
 }
